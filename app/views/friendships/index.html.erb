@@ -1,0 +1,21 @@
+<p> Pending requests </p>
+<% @sent.each do |friendship| %>
+  <%= gravatar_for(friendship.friend) %>
+  <%= link_to friendship.friend.name, users_path(friendship.friend) %>
+  <%= link_to "cancel request", friendship_path(friendship), method: :destroy %>
+<% end %>
+
+<p> Received requests </p>
+<% @received.each do |friendship| %>
+  <%= gravatar_for(friendship.friend) %>
+  <%= link_to friendship.friend.name, users_path(friendship.friend) %>
+  <%= link_to "accept request", friendship_path(friendship), method: :patch %>
+  <%= link_to "cancel request", friendship_path(friendship), method: :delete %>
+<% end %>
+
+<p> Friends </p>
+<% @friendships.each do |friendship| %>
+  <%= gravatar_for(friendship.friend) %>
+  <%= link_to friendship.friend.name, users_path(friendship.friend) %>
+  <%= link_to "delete friend", friendship_path(friendship), method: :delete %>
+<% end %>
