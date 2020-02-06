@@ -1,11 +1,15 @@
 Rails.application.routes.draw do
-  get 'post/new'
-  get 'post/index'
+  get 'pages/feed'
   get '/users', to: 'user#index'
   get '/friends', to: 'friendships#index'
-  resources :friendships, only: %i[destroy update]
   get '/friendships', to: 'friendships#create', as: :friendships
+  
+  
+  resources :friendships, only: %i[destroy update]
+  resources :posts, only: %i[create show] do
+    resources :comments, only: %i[create destroy]
+  end
+
   devise_for :users
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  root 'post#index'
+  root 'pages#feed'
 end

@@ -1,0 +1,21 @@
+<%= render 'post/form' %>
+
+<h1>Lo mas nuevo!</h1>
+
+<% @posts.each do |post| %>
+  <div>
+  <%= post.image %>
+  <%= post.content %>
+  </div>
+  <div>
+  <% post.comments.each do |comment| %>
+  <div> <p> helloo</p>
+  <%= comment.content %>
+  <%= "#{time_ago_in_words(comment.created_at)} ago" %>
+  <% end %>
+  </div>
+  <%= form_for [post, post.comments.new] do |f| %>
+    <%= f.text_field :content, placeholder: "add comment" %>
+    <%= f.submit :submit %>
+  <% end %>
+<% end %>
