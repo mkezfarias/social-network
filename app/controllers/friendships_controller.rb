@@ -10,7 +10,8 @@ class FriendshipsController < ApplicationController
     @friend = User.find_by(id: params[:user_id])
     friendship = current_user.friendships.new(friend: @friend)
     if friendship.save
-      redirect_to root_path
+      flash[:notice] = 'Request Submitted'
+      redirect_to users_path
     else
       redirect_to friends_path
     end

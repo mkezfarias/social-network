@@ -1,9 +1,7 @@
 class UserController < ApplicationController
- skip_before_action :authenticate_user!, only: :new
-  
+  skip_before_action :authenticate_user!, only: :new
   def index
     @users = User.all
-    render json: @users
   end
 
   def show; end
