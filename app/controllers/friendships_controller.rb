@@ -1,15 +1,17 @@
 class FriendshipsController < ApplicationController
 
   def index
-    @friendships = current_user.friendships.where(confirmed: true) + current_user.inverse_friendships.where(confirmed: true)
-    @sent = current_user.friendships
-    @received = current_user.inverse_friendships.where(confirmed: nil)
+    @direct_friends = current_user.friendships.where(confirmed: true, user_id: current_user.id)
+    @inverse_friends = current_user.inverse_friendships.where(confirmed: true, friend_id: current_user.id)
+    @sent = current_user.friendships.where(user_id: current_user.id)
+    @received = current_user.inverse_friendships.where(confirmed: nil, friend_id: current_user.id)
   end
 
   def create
     @friend = User.find_by(id: params[:user_id])
     friendship = current_user.friendships.new(friend: @friend)
-    if friendship.save
+    friendship.valid?
+    if @friend.id != current_user.id && friendship.save
       flash[:notice] = 'Request Submitted'
       redirect_to users_path
     else
@@ -24,9 +26,10 @@ class FriendshipsController < ApplicationController
   end
 
   def destroy
-    @friendship = Friendship.find_by(id: params[:id])
-    @friendship.destroy
-    redirect_to friends_path
+    #@friendship = Friendship.where("user_id = ? AND friend_id = ? OR friend_id = ? AND user_id = ?", params[:current_user], params[:friend], params[:friend], params[:current_user])
+   @friendship = Friendship.find_by(id: params[:id])
+   @friendship.destroy
+   redirect_to friends_path
   end
 
 
