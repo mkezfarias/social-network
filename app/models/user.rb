@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  attr_accessor :like
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   validates :name, presence: true

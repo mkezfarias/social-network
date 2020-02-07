@@ -4,7 +4,8 @@ Rails.application.routes.draw do
   get '/friends', to: 'friendships#index'
   get '/friendships', to: 'friendships#create', as: :friendships
   
-  
+
+  resources :likes, only: %i[create destroy]
   resources :friendships, only: %i[destroy update]
   resources :posts, only: %i[create show] do
     resources :comments, only: %i[create destroy]
