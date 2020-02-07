@@ -1,12 +1,6 @@
-<%= render 'posts/form' %>
+<%= render 'post', post: @post %>
 
-<h1>Lo mas nuevo!</h1>
-<h1><%= current_user.name %></h1>
-
-<% @posts.each do |post| %>
- <%=render 'posts/post', post: post %>
-
-  <% post.comments.each do |comment| %>
+  <% @comments.each do |comment| %>
   <div>
     <%= comment.user.name %>
     <%= comment.content %>
@@ -19,8 +13,7 @@
     <%= "#{time_ago_in_words(comment.created_at)} ago" %>
     <% end %>
   </div>
-  <%= form_for [post, post.comments.new] do |f| %>
+  <%= form_for [@post, @post.comments.new] do |f| %>
     <%= f.text_field :content, placeholder: "add comment" %>
     <%= f.submit :submit %>
   <% end %>
-<% end %>

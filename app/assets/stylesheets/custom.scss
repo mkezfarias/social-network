@@ -1,0 +1,11 @@
+.upvote, .downvote {
+  transform: scale(.5);
+}
+
+.post-upvote, .post-downvote {
+    transform: scale(.7);
+}
+
+.post {
+    width: 500px;
+}
