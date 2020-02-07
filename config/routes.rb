@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   get 'pages/feed'
   get '/users', to: 'user#index'
+  get '/profile/:id', to: 'users#show', as: :user
   get '/friends', to: 'friendships#index'
   get '/friendships', to: 'friendships#create', as: :friendships
   

@@ -1,3 +1,7 @@
+<%= link_to user_path(post.user) do %>
+  <%= gravatar_for post.user %>
+<% end %>
+<span><%= post.user.name %></span>
  <div class="card post">
      <%= link_to post_path(post.id) do %>
      <%= image_tag("https://i.picsum.photos/id/#{rand(1..800)}/400/450.jpg", class: "card-img-top") %>
