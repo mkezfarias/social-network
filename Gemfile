@@ -47,6 +47,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'spring'
   gem 'letter_opener'
+  gem 'dotenv-rails'
 end
 
 group :development do

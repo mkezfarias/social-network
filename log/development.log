@@ -35503,3 +35503,2383 @@ Unpermitted parameter: :password_confirmation
 Completed 200 OK in 214ms (Views: 52.3ms | ActiveRecord: 1.4ms)
 
 
+Started GET "/users" for ::1 at 2020-02-11 14:45:48 -0600
+Processing by UsersController#index as HTML
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-02-11 15:00:28 -0600
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by PagesController#feed as HTML
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Completed 401 Unauthorized in 82ms (ActiveRecord: 17.7ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-02-11 15:00:29 -0600
+Processing by Devise::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (36.9ms)
+  Rendered users/sessions/new.html.erb within layouts/application (52.3ms)
+  Rendered layouts/_navbar.html.erb (1.4ms)
+Completed 200 OK in 503ms (Views: 495.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-02-11 15:00:34 -0600
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (1.0ms)
+  Rendered users/shared/_links.html.erb (4.3ms)
+  Rendered users/registrations/new.html.erb within layouts/application (15.6ms)
+  Rendered layouts/_navbar.html.erb (1.1ms)
+Completed 200 OK in 91ms (Views: 89.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-02-11 15:03:31 -0600
+Processing by Devise::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (2.7ms)
+  Rendered users/sessions/new.html.erb within layouts/application (14.2ms)
+  Rendered layouts/_navbar.html.erb (0.9ms)
+Completed 200 OK in 79ms (Views: 77.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-02-11 15:03:33 -0600
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.8ms)
+  Rendered devise/shared/_links.html.erb (2.3ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (13.3ms)
+  Rendered layouts/_navbar.html.erb (1.9ms)
+Completed 200 OK in 69ms (Views: 67.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2020-02-11 15:04:02 -0600
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KQSn4JaB6RKd0+fKtpbECNNmDRxjHgA461D9cjOAVU5X0a8ack2LY2qr+u1T8f6Ns+S95toA/OGkF0q5k+1M1A==", "user"=>{"email"=>"muchostacosmx@gmail.com", "name"=>"muchostacos", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+Unpermitted parameter: :password_confirmation
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "muchostacosmx@gmail.com"], ["LIMIT", 1]]
+  ↳ /home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Create (1.8ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "name", "confirmation_token", "confirmation_sent_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["email", "muchostacosmx@gmail.com"], ["encrypted_password", "$2a$11$x.FhTWMViRur/szA6/gKXOKcEHzQUDjkdpQuBvhwP1p6QbmVidrEK"], ["created_at", "2020-02-11 21:04:02.404461"], ["updated_at", "2020-02-11 21:04:02.404461"], ["name", "muchostacos"], ["confirmation_token", "sTj2sWL8csJyXZsbKsEf"], ["confirmation_sent_at", "2020-02-11 21:04:02.404639"]]
+  ↳ /home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  Rendering users/mailer/confirmation_instructions.html.erb
+  Rendered users/mailer/confirmation_instructions.html.erb (1.1ms)
+Devise::Mailer#confirmation_instructions: processed outbound mail in 1101.8ms
+Sent mail to muchostacosmx@gmail.com (515.7ms)
+Date: Tue, 11 Feb 2020 15:04:03 -0600
+From: please-change-me-at-config-initializers-devise@example.com
+Reply-To: please-change-me-at-config-initializers-devise@example.com
+To: muchostacosmx@gmail.com
+Message-ID: <5e4316c3dd1d2_691a2ac69ce65e8c54ec@mkezmkez-Inspiron-3576.mail>
+Subject: Confirmation instructions
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>Welcome muchostacosmx@gmail.com!</p>
+
+<p>You can confirm your account email through the link below:</p>
+
+<p><a href="http://localhost:3000/users/confirmation?confirmation_token=sTj2sWL8csJyXZsbKsEf">Confirm my account</a></p>
+
+Completed 500 Internal Server Error in 2159ms (ActiveRecord: 5.0ms)
+
+
+  
+Net::SMTPAuthenticationError (535-5.7.8 Username and Password not accepted. Learn more at
+):
+  
+/home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/2.6.0/net/smtp.rb:981:in `check_auth_response'
+/home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/2.6.0/net/smtp.rb:736:in `auth_plain'
+/home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/2.6.0/net/smtp.rb:728:in `authenticate'
+/home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/2.6.0/net/smtp.rb:565:in `do_start'
+/home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/2.6.0/net/smtp.rb:518:in `start'
+mail (2.7.1) lib/mail/network/delivery_methods/smtp.rb:109:in `start_smtp_session'
+mail (2.7.1) lib/mail/network/delivery_methods/smtp.rb:100:in `deliver!'
+mail (2.7.1) lib/mail/message.rb:2159:in `do_delivery'
+mail (2.7.1) lib/mail/message.rb:260:in `block in deliver'
+actionmailer (5.2.4.1) lib/action_mailer/base.rb:560:in `block in deliver_mail'
+activesupport (5.2.4.1) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.4.1) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.4.1) lib/active_support/notifications.rb:168:in `instrument'
+actionmailer (5.2.4.1) lib/action_mailer/base.rb:558:in `deliver_mail'
+mail (2.7.1) lib/mail/message.rb:260:in `deliver'
+actionmailer (5.2.4.1) lib/action_mailer/message_delivery.rb:114:in `block in deliver_now'
+actionmailer (5.2.4.1) lib/action_mailer/rescuable.rb:17:in `handle_exceptions'
+actionmailer (5.2.4.1) lib/action_mailer/message_delivery.rb:113:in `deliver_now'
+devise (4.7.1) lib/devise/models/authenticatable.rb:199:in `send_devise_notification'
+devise (4.7.1) lib/devise/models/confirmable.rb:121:in `send_confirmation_instructions'
+devise (4.7.1) lib/devise/models/confirmable.rb:183:in `send_on_create_confirmation_instructions'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:426:in `block in make_lambda'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:261:in `block in conditional'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:517:in `block in invoke_after'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:517:in `each'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:517:in `invoke_after'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:133:in `run_callbacks'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:816:in `_run_commit_callbacks'
+activerecord (5.2.4.1) lib/active_record/transactions.rb:347:in `committed!'
+activerecord (5.2.4.1) lib/active_record/connection_adapters/abstract/transaction.rb:128:in `commit_records'
+activerecord (5.2.4.1) lib/active_record/connection_adapters/abstract/transaction.rb:223:in `block in commit_transaction'
+/home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/2.6.0/monitor.rb:235:in `mon_synchronize'
+activerecord (5.2.4.1) lib/active_record/connection_adapters/abstract/transaction.rb:213:in `commit_transaction'
+activerecord (5.2.4.1) lib/active_record/connection_adapters/abstract/transaction.rb:252:in `block in within_new_transaction'
+/home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/2.6.0/monitor.rb:235:in `mon_synchronize'
+activerecord (5.2.4.1) lib/active_record/connection_adapters/abstract/transaction.rb:236:in `within_new_transaction'
+activerecord (5.2.4.1) lib/active_record/connection_adapters/abstract/database_statements.rb:267:in `transaction'
+activerecord (5.2.4.1) lib/active_record/transactions.rb:212:in `transaction'
+activerecord (5.2.4.1) lib/active_record/transactions.rb:385:in `with_transaction_returning_status'
+activerecord (5.2.4.1) lib/active_record/transactions.rb:310:in `block in save'
+activerecord (5.2.4.1) lib/active_record/transactions.rb:325:in `rollback_active_record_state!'
+activerecord (5.2.4.1) lib/active_record/transactions.rb:309:in `save'
+activerecord (5.2.4.1) lib/active_record/suppressor.rb:44:in `save'
+devise (4.7.1) app/controllers/devise/registrations_controller.rb:19:in `create'
+actionpack (5.2.4.1) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (5.2.4.1) lib/abstract_controller/base.rb:194:in `process_action'
+actionpack (5.2.4.1) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.2.4.1) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:132:in `run_callbacks'
+actionpack (5.2.4.1) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.4.1) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.4.1) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.4.1) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.4.1) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.4.1) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.4.1) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.4.1) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.4.1) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.4.1) lib/abstract_controller/base.rb:134:in `process'
+actionview (5.2.4.1) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.4.1) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.4.1) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.4.1) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.4.1) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.4.1) lib/action_dispatch/routing/mapper.rb:18:in `block in <class:Constraints>'
+actionpack (5.2.4.1) lib/action_dispatch/routing/mapper.rb:48:in `serve'
+actionpack (5.2.4.1) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.4.1) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.4.1) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.4.1) lib/action_dispatch/routing/route_set.rb:840:in `call'
+omniauth (1.9.0) lib/omniauth/strategy.rb:192:in `call!'
+omniauth (1.9.0) lib/omniauth/strategy.rb:169:in `call'
+warden (1.2.8) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.8) lib/warden/manager.rb:34:in `catch'
+warden (1.2.8) lib/warden/manager.rb:34:in `call'
+rack (2.1.2) lib/rack/tempfile_reaper.rb:17:in `call'
+rack (2.1.2) lib/rack/etag.rb:27:in `call'
+rack (2.1.2) lib/rack/conditional_get.rb:40:in `call'
+rack (2.1.2) lib/rack/head.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.1.2) lib/rack/session/abstract/id.rb:269:in `context'
+rack (2.1.2) lib/rack/session/abstract/id.rb:263:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.4.1) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.1.2) lib/rack/method_override.rb:24:in `call'
+rack (2.1.2) lib/rack/runtime.rb:24:in `call'
+activesupport (5.2.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.1.2) lib/rack/sendfile.rb:113:in `call'
+railties (5.2.4.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started POST "/users" for ::1 at 2020-02-11 15:05:34 -0600
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KQSn4JaB6RKd0+fKtpbECNNmDRxjHgA461D9cjOAVU5X0a8ack2LY2qr+u1T8f6Ns+S95toA/OGkF0q5k+1M1A==", "user"=>{"email"=>"muchostacosmx@gmail.com", "name"=>"muchostacos", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+Unpermitted parameter: :password_confirmation
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "muchostacosmx@gmail.com"], ["LIMIT", 1]]
+  ↳ /home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ /home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (3.3ms)
+  Rendered devise/shared/_links.html.erb (3.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (15.1ms)
+  Rendered layouts/_navbar.html.erb (1.5ms)
+Completed 200 OK in 274ms (Views: 98.9ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/users" for ::1 at 2020-02-11 15:05:51 -0600
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"RKx8digmRG0KzniiAjUkJBe0hYa9dM+ljLF94bky8IPQEUsiHcfkVlELfEeQsTgG8mUboIJVOxXDFpaGBfjZ1Q==", "user"=>{"email"=>"muchostacosmx+1@gmail.com", "name"=>"muchostacos", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+Unpermitted parameter: :password_confirmation
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "muchostacosmx+1@gmail.com"], ["LIMIT", 1]]
+  ↳ /home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Create (1.0ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "name", "confirmation_token", "confirmation_sent_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["email", "muchostacosmx+1@gmail.com"], ["encrypted_password", "$2a$11$ZvLvAJXhz3CREzYbeusjzezrWpI8XETLocJ2bUTyhv56czafn7LLW"], ["created_at", "2020-02-11 21:05:51.928555"], ["updated_at", "2020-02-11 21:05:51.928555"], ["name", "muchostacos"], ["confirmation_token", "yZDNUFe4VWzC7dbR1XY8"], ["confirmation_sent_at", "2020-02-11 21:05:51.928831"]]
+  ↳ /home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  Rendering users/mailer/confirmation_instructions.html.erb
+  Rendered users/mailer/confirmation_instructions.html.erb (0.7ms)
+Devise::Mailer#confirmation_instructions: processed outbound mail in 9.1ms
+Sent mail to muchostacosmx+1@gmail.com (559.5ms)
+Date: Tue, 11 Feb 2020 15:05:51 -0600
+From: please-change-me-at-config-initializers-devise@example.com
+Reply-To: please-change-me-at-config-initializers-devise@example.com
+To: muchostacosmx+1@gmail.com
+Message-ID: <5e43172fe6eee_691a2ac69ce65e00553d@mkezmkez-Inspiron-3576.mail>
+Subject: Confirmation instructions
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>Welcome muchostacosmx+1@gmail.com!</p>
+
+<p>You can confirm your account email through the link below:</p>
+
+<p><a href="http://localhost:3000/users/confirmation?confirmation_token=yZDNUFe4VWzC7dbR1XY8">Confirm my account</a></p>
+
+Completed 500 Internal Server Error in 734ms (ActiveRecord: 3.7ms)
+
+
+  
+Net::SMTPAuthenticationError (535-5.7.8 Username and Password not accepted. Learn more at
+):
+  
+/home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/2.6.0/net/smtp.rb:981:in `check_auth_response'
+/home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/2.6.0/net/smtp.rb:736:in `auth_plain'
+/home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/2.6.0/net/smtp.rb:728:in `authenticate'
+/home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/2.6.0/net/smtp.rb:565:in `do_start'
+/home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/2.6.0/net/smtp.rb:518:in `start'
+mail (2.7.1) lib/mail/network/delivery_methods/smtp.rb:109:in `start_smtp_session'
+mail (2.7.1) lib/mail/network/delivery_methods/smtp.rb:100:in `deliver!'
+mail (2.7.1) lib/mail/message.rb:2159:in `do_delivery'
+mail (2.7.1) lib/mail/message.rb:260:in `block in deliver'
+actionmailer (5.2.4.1) lib/action_mailer/base.rb:560:in `block in deliver_mail'
+activesupport (5.2.4.1) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.4.1) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.4.1) lib/active_support/notifications.rb:168:in `instrument'
+actionmailer (5.2.4.1) lib/action_mailer/base.rb:558:in `deliver_mail'
+mail (2.7.1) lib/mail/message.rb:260:in `deliver'
+actionmailer (5.2.4.1) lib/action_mailer/message_delivery.rb:114:in `block in deliver_now'
+actionmailer (5.2.4.1) lib/action_mailer/rescuable.rb:17:in `handle_exceptions'
+actionmailer (5.2.4.1) lib/action_mailer/message_delivery.rb:113:in `deliver_now'
+devise (4.7.1) lib/devise/models/authenticatable.rb:199:in `send_devise_notification'
+devise (4.7.1) lib/devise/models/confirmable.rb:121:in `send_confirmation_instructions'
+devise (4.7.1) lib/devise/models/confirmable.rb:183:in `send_on_create_confirmation_instructions'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:426:in `block in make_lambda'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:261:in `block in conditional'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:517:in `block in invoke_after'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:517:in `each'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:517:in `invoke_after'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:133:in `run_callbacks'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:816:in `_run_commit_callbacks'
+activerecord (5.2.4.1) lib/active_record/transactions.rb:347:in `committed!'
+activerecord (5.2.4.1) lib/active_record/connection_adapters/abstract/transaction.rb:128:in `commit_records'
+activerecord (5.2.4.1) lib/active_record/connection_adapters/abstract/transaction.rb:223:in `block in commit_transaction'
+/home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/2.6.0/monitor.rb:235:in `mon_synchronize'
+activerecord (5.2.4.1) lib/active_record/connection_adapters/abstract/transaction.rb:213:in `commit_transaction'
+activerecord (5.2.4.1) lib/active_record/connection_adapters/abstract/transaction.rb:252:in `block in within_new_transaction'
+/home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/2.6.0/monitor.rb:235:in `mon_synchronize'
+activerecord (5.2.4.1) lib/active_record/connection_adapters/abstract/transaction.rb:236:in `within_new_transaction'
+activerecord (5.2.4.1) lib/active_record/connection_adapters/abstract/database_statements.rb:267:in `transaction'
+activerecord (5.2.4.1) lib/active_record/transactions.rb:212:in `transaction'
+activerecord (5.2.4.1) lib/active_record/transactions.rb:385:in `with_transaction_returning_status'
+activerecord (5.2.4.1) lib/active_record/transactions.rb:310:in `block in save'
+activerecord (5.2.4.1) lib/active_record/transactions.rb:325:in `rollback_active_record_state!'
+activerecord (5.2.4.1) lib/active_record/transactions.rb:309:in `save'
+activerecord (5.2.4.1) lib/active_record/suppressor.rb:44:in `save'
+devise (4.7.1) app/controllers/devise/registrations_controller.rb:19:in `create'
+actionpack (5.2.4.1) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (5.2.4.1) lib/abstract_controller/base.rb:194:in `process_action'
+actionpack (5.2.4.1) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.2.4.1) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:132:in `run_callbacks'
+actionpack (5.2.4.1) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.4.1) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.4.1) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.4.1) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.4.1) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.4.1) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.4.1) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.4.1) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.4.1) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.4.1) lib/abstract_controller/base.rb:134:in `process'
+actionview (5.2.4.1) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.4.1) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.4.1) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.4.1) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.4.1) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.4.1) lib/action_dispatch/routing/mapper.rb:18:in `block in <class:Constraints>'
+actionpack (5.2.4.1) lib/action_dispatch/routing/mapper.rb:48:in `serve'
+actionpack (5.2.4.1) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.4.1) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.4.1) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.4.1) lib/action_dispatch/routing/route_set.rb:840:in `call'
+omniauth (1.9.0) lib/omniauth/strategy.rb:192:in `call!'
+omniauth (1.9.0) lib/omniauth/strategy.rb:169:in `call'
+warden (1.2.8) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.8) lib/warden/manager.rb:34:in `catch'
+warden (1.2.8) lib/warden/manager.rb:34:in `call'
+rack (2.1.2) lib/rack/tempfile_reaper.rb:17:in `call'
+rack (2.1.2) lib/rack/etag.rb:27:in `call'
+rack (2.1.2) lib/rack/conditional_get.rb:40:in `call'
+rack (2.1.2) lib/rack/head.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.1.2) lib/rack/session/abstract/id.rb:269:in `context'
+rack (2.1.2) lib/rack/session/abstract/id.rb:263:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.4.1) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.1.2) lib/rack/method_override.rb:24:in `call'
+rack (2.1.2) lib/rack/runtime.rb:24:in `call'
+activesupport (5.2.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.1.2) lib/rack/sendfile.rb:113:in `call'
+railties (5.2.4.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for ::1 at 2020-02-11 15:09:34 -0600
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by PagesController#feed as HTML
+Completed 401 Unauthorized in 14ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-02-11 15:09:34 -0600
+Processing by Devise::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (2.4ms)
+  Rendered users/sessions/new.html.erb within layouts/application (15.9ms)
+  Rendered layouts/_navbar.html.erb (1.3ms)
+Completed 200 OK in 507ms (Views: 449.8ms | ActiveRecord: 10.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-02-11 15:09:41 -0600
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (1.8ms)
+  Rendered devise/shared/_links.html.erb (2.9ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (11.6ms)
+  Rendered layouts/_navbar.html.erb (3.2ms)
+Completed 200 OK in 75ms (Views: 73.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2020-02-11 15:10:01 -0600
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UVGOWo6T7ra7AYy/4MVNLygIWEJ/ZqUsEtt7mx1p9E0vhIagal+Mx0x5kZgFoneqSIrouMZ4WfVdnMxQvQTt1w==", "user"=>{"email"=>"mike.fari+aa@gmail.com", "name"=>"LUIS PUENTE", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+Unpermitted parameter: :password_confirmation
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Exists (1.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "mike.fari+aa@gmail.com"], ["LIMIT", 1]]
+  ↳ /home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "name", "confirmation_token", "confirmation_sent_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["email", "mike.fari+aa@gmail.com"], ["encrypted_password", "$2a$11$hsAVh1RPYo4tfAuEjvaJTeDnkn6ZV6CJreXgfKk4ft5Ft8O6IRedW"], ["created_at", "2020-02-11 21:10:01.733916"], ["updated_at", "2020-02-11 21:10:01.733916"], ["name", "LUIS PUENTE"], ["confirmation_token", "bZisWiEFHrMUDnsq84sM"], ["confirmation_sent_at", "2020-02-11 21:10:01.734147"]]
+  ↳ /home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  Rendering users/mailer/confirmation_instructions.html.erb
+  Rendered users/mailer/confirmation_instructions.html.erb (1.3ms)
+Devise::Mailer#confirmation_instructions: processed outbound mail in 134.6ms
+Sent mail to mike.fari+aa@gmail.com (340.2ms)
+Date: Tue, 11 Feb 2020 15:10:02 -0600
+From: please-change-me-at-config-initializers-devise@example.com
+Reply-To: please-change-me-at-config-initializers-devise@example.com
+To: mike.fari+aa@gmail.com
+Message-ID: <5e43182a157c2_6cfe2b0700c979d084629@mkezmkez-Inspiron-3576.mail>
+Subject: Confirmation instructions
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>Welcome mike.fari+aa@gmail.com!</p>
+
+<p>You can confirm your account email through the link below:</p>
+
+<p><a href="http://mail.muchostacos.com.mx/users/confirmation?confirmation_token=bZisWiEFHrMUDnsq84sM">Confirm my account</a></p>
+
+Completed 500 Internal Server Error in 866ms (ActiveRecord: 4.7ms)
+
+
+  
+Net::SMTPAuthenticationError (535-5.7.8 Username and Password not accepted. Learn more at
+):
+  
+/home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/2.6.0/net/smtp.rb:981:in `check_auth_response'
+/home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/2.6.0/net/smtp.rb:736:in `auth_plain'
+/home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/2.6.0/net/smtp.rb:728:in `authenticate'
+/home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/2.6.0/net/smtp.rb:565:in `do_start'
+/home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/2.6.0/net/smtp.rb:518:in `start'
+mail (2.7.1) lib/mail/network/delivery_methods/smtp.rb:109:in `start_smtp_session'
+mail (2.7.1) lib/mail/network/delivery_methods/smtp.rb:100:in `deliver!'
+mail (2.7.1) lib/mail/message.rb:2159:in `do_delivery'
+mail (2.7.1) lib/mail/message.rb:260:in `block in deliver'
+actionmailer (5.2.4.1) lib/action_mailer/base.rb:560:in `block in deliver_mail'
+activesupport (5.2.4.1) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.4.1) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.4.1) lib/active_support/notifications.rb:168:in `instrument'
+actionmailer (5.2.4.1) lib/action_mailer/base.rb:558:in `deliver_mail'
+mail (2.7.1) lib/mail/message.rb:260:in `deliver'
+actionmailer (5.2.4.1) lib/action_mailer/message_delivery.rb:114:in `block in deliver_now'
+actionmailer (5.2.4.1) lib/action_mailer/rescuable.rb:17:in `handle_exceptions'
+actionmailer (5.2.4.1) lib/action_mailer/message_delivery.rb:113:in `deliver_now'
+devise (4.7.1) lib/devise/models/authenticatable.rb:199:in `send_devise_notification'
+devise (4.7.1) lib/devise/models/confirmable.rb:121:in `send_confirmation_instructions'
+devise (4.7.1) lib/devise/models/confirmable.rb:183:in `send_on_create_confirmation_instructions'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:426:in `block in make_lambda'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:261:in `block in conditional'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:517:in `block in invoke_after'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:517:in `each'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:517:in `invoke_after'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:133:in `run_callbacks'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:816:in `_run_commit_callbacks'
+activerecord (5.2.4.1) lib/active_record/transactions.rb:347:in `committed!'
+activerecord (5.2.4.1) lib/active_record/connection_adapters/abstract/transaction.rb:128:in `commit_records'
+activerecord (5.2.4.1) lib/active_record/connection_adapters/abstract/transaction.rb:223:in `block in commit_transaction'
+/home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/2.6.0/monitor.rb:235:in `mon_synchronize'
+activerecord (5.2.4.1) lib/active_record/connection_adapters/abstract/transaction.rb:213:in `commit_transaction'
+activerecord (5.2.4.1) lib/active_record/connection_adapters/abstract/transaction.rb:252:in `block in within_new_transaction'
+/home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/2.6.0/monitor.rb:235:in `mon_synchronize'
+activerecord (5.2.4.1) lib/active_record/connection_adapters/abstract/transaction.rb:236:in `within_new_transaction'
+activerecord (5.2.4.1) lib/active_record/connection_adapters/abstract/database_statements.rb:267:in `transaction'
+activerecord (5.2.4.1) lib/active_record/transactions.rb:212:in `transaction'
+activerecord (5.2.4.1) lib/active_record/transactions.rb:385:in `with_transaction_returning_status'
+activerecord (5.2.4.1) lib/active_record/transactions.rb:310:in `block in save'
+activerecord (5.2.4.1) lib/active_record/transactions.rb:325:in `rollback_active_record_state!'
+activerecord (5.2.4.1) lib/active_record/transactions.rb:309:in `save'
+activerecord (5.2.4.1) lib/active_record/suppressor.rb:44:in `save'
+devise (4.7.1) app/controllers/devise/registrations_controller.rb:19:in `create'
+actionpack (5.2.4.1) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (5.2.4.1) lib/abstract_controller/base.rb:194:in `process_action'
+actionpack (5.2.4.1) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.2.4.1) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:132:in `run_callbacks'
+actionpack (5.2.4.1) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.4.1) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.4.1) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.4.1) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.4.1) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.4.1) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.4.1) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.4.1) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.4.1) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.4.1) lib/abstract_controller/base.rb:134:in `process'
+actionview (5.2.4.1) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.4.1) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.4.1) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.4.1) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.4.1) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.4.1) lib/action_dispatch/routing/mapper.rb:18:in `block in <class:Constraints>'
+actionpack (5.2.4.1) lib/action_dispatch/routing/mapper.rb:48:in `serve'
+actionpack (5.2.4.1) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.4.1) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.4.1) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.4.1) lib/action_dispatch/routing/route_set.rb:840:in `call'
+omniauth (1.9.0) lib/omniauth/strategy.rb:192:in `call!'
+omniauth (1.9.0) lib/omniauth/strategy.rb:169:in `call'
+warden (1.2.8) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.8) lib/warden/manager.rb:34:in `catch'
+warden (1.2.8) lib/warden/manager.rb:34:in `call'
+rack (2.1.2) lib/rack/tempfile_reaper.rb:17:in `call'
+rack (2.1.2) lib/rack/etag.rb:27:in `call'
+rack (2.1.2) lib/rack/conditional_get.rb:40:in `call'
+rack (2.1.2) lib/rack/head.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.1.2) lib/rack/session/abstract/id.rb:269:in `context'
+rack (2.1.2) lib/rack/session/abstract/id.rb:263:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.4.1) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.1.2) lib/rack/method_override.rb:24:in `call'
+rack (2.1.2) lib/rack/runtime.rb:24:in `call'
+activesupport (5.2.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.1.2) lib/rack/sendfile.rb:113:in `call'
+railties (5.2.4.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started POST "/users" for ::1 at 2020-02-11 15:10:57 -0600
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3p7w85uOZX2qlan0ga1BqOi4GVaf8lPXH0JRdfjd0ulKI8enrm/FRvFQrRETKV2KDWmHcKDTp2dQ5boSRBf7vw==", "user"=>{"email"=>"mike.fari+aab@gmail.com", "name"=>"LUIS PUENTE", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+Unpermitted parameter: :password_confirmation
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "mike.fari+aab@gmail.com"], ["LIMIT", 1]]
+  ↳ /home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "name", "confirmation_token", "confirmation_sent_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["email", "mike.fari+aab@gmail.com"], ["encrypted_password", "$2a$11$eAfjEgbWfYbeuASvDA6lEegIGzK36TboS4WUV2IZMq3uWIhT7cri6"], ["created_at", "2020-02-11 21:10:57.541797"], ["updated_at", "2020-02-11 21:10:57.541797"], ["name", "LUIS PUENTE"], ["confirmation_token", "_sByZKzr1z6q166Q4zEv"], ["confirmation_sent_at", "2020-02-11 21:10:57.541891"]]
+  ↳ /home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  Rendering users/mailer/confirmation_instructions.html.erb
+  Rendered users/mailer/confirmation_instructions.html.erb (1.2ms)
+Devise::Mailer#confirmation_instructions: processed outbound mail in 10.9ms
+Sent mail to mike.fari+aab@gmail.com (454.3ms)
+Date: Tue, 11 Feb 2020 15:10:57 -0600
+From: please-change-me-at-config-initializers-devise@example.com
+Reply-To: please-change-me-at-config-initializers-devise@example.com
+To: mike.fari+aab@gmail.com
+Message-ID: <5e43186188a86_6cfe2b0700c97b74847a6@mkezmkez-Inspiron-3576.mail>
+Subject: Confirmation instructions
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>Welcome mike.fari+aab@gmail.com!</p>
+
+<p>You can confirm your account email through the link below:</p>
+
+<p><a href="http://mail.muchostacos.com.mx/users/confirmation?confirmation_token=_sByZKzr1z6q166Q4zEv">Confirm my account</a></p>
+
+Completed 500 Internal Server Error in 624ms (ActiveRecord: 3.3ms)
+
+
+  
+Net::SMTPAuthenticationError (535-5.7.8 Username and Password not accepted. Learn more at
+):
+  
+/home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/2.6.0/net/smtp.rb:981:in `check_auth_response'
+/home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/2.6.0/net/smtp.rb:736:in `auth_plain'
+/home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/2.6.0/net/smtp.rb:728:in `authenticate'
+/home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/2.6.0/net/smtp.rb:565:in `do_start'
+/home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/2.6.0/net/smtp.rb:518:in `start'
+mail (2.7.1) lib/mail/network/delivery_methods/smtp.rb:109:in `start_smtp_session'
+mail (2.7.1) lib/mail/network/delivery_methods/smtp.rb:100:in `deliver!'
+mail (2.7.1) lib/mail/message.rb:2159:in `do_delivery'
+mail (2.7.1) lib/mail/message.rb:260:in `block in deliver'
+actionmailer (5.2.4.1) lib/action_mailer/base.rb:560:in `block in deliver_mail'
+activesupport (5.2.4.1) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.4.1) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.4.1) lib/active_support/notifications.rb:168:in `instrument'
+actionmailer (5.2.4.1) lib/action_mailer/base.rb:558:in `deliver_mail'
+mail (2.7.1) lib/mail/message.rb:260:in `deliver'
+actionmailer (5.2.4.1) lib/action_mailer/message_delivery.rb:114:in `block in deliver_now'
+actionmailer (5.2.4.1) lib/action_mailer/rescuable.rb:17:in `handle_exceptions'
+actionmailer (5.2.4.1) lib/action_mailer/message_delivery.rb:113:in `deliver_now'
+devise (4.7.1) lib/devise/models/authenticatable.rb:199:in `send_devise_notification'
+devise (4.7.1) lib/devise/models/confirmable.rb:121:in `send_confirmation_instructions'
+devise (4.7.1) lib/devise/models/confirmable.rb:183:in `send_on_create_confirmation_instructions'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:426:in `block in make_lambda'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:261:in `block in conditional'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:517:in `block in invoke_after'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:517:in `each'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:517:in `invoke_after'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:133:in `run_callbacks'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:816:in `_run_commit_callbacks'
+activerecord (5.2.4.1) lib/active_record/transactions.rb:347:in `committed!'
+activerecord (5.2.4.1) lib/active_record/connection_adapters/abstract/transaction.rb:128:in `commit_records'
+activerecord (5.2.4.1) lib/active_record/connection_adapters/abstract/transaction.rb:223:in `block in commit_transaction'
+/home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/2.6.0/monitor.rb:235:in `mon_synchronize'
+activerecord (5.2.4.1) lib/active_record/connection_adapters/abstract/transaction.rb:213:in `commit_transaction'
+activerecord (5.2.4.1) lib/active_record/connection_adapters/abstract/transaction.rb:252:in `block in within_new_transaction'
+/home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/2.6.0/monitor.rb:235:in `mon_synchronize'
+activerecord (5.2.4.1) lib/active_record/connection_adapters/abstract/transaction.rb:236:in `within_new_transaction'
+activerecord (5.2.4.1) lib/active_record/connection_adapters/abstract/database_statements.rb:267:in `transaction'
+activerecord (5.2.4.1) lib/active_record/transactions.rb:212:in `transaction'
+activerecord (5.2.4.1) lib/active_record/transactions.rb:385:in `with_transaction_returning_status'
+activerecord (5.2.4.1) lib/active_record/transactions.rb:310:in `block in save'
+activerecord (5.2.4.1) lib/active_record/transactions.rb:325:in `rollback_active_record_state!'
+activerecord (5.2.4.1) lib/active_record/transactions.rb:309:in `save'
+activerecord (5.2.4.1) lib/active_record/suppressor.rb:44:in `save'
+devise (4.7.1) app/controllers/devise/registrations_controller.rb:19:in `create'
+actionpack (5.2.4.1) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (5.2.4.1) lib/abstract_controller/base.rb:194:in `process_action'
+actionpack (5.2.4.1) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.2.4.1) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:132:in `run_callbacks'
+actionpack (5.2.4.1) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.4.1) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.4.1) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.4.1) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.4.1) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.4.1) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.4.1) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.4.1) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.4.1) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.4.1) lib/abstract_controller/base.rb:134:in `process'
+actionview (5.2.4.1) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.4.1) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.4.1) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.4.1) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.4.1) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.4.1) lib/action_dispatch/routing/mapper.rb:18:in `block in <class:Constraints>'
+actionpack (5.2.4.1) lib/action_dispatch/routing/mapper.rb:48:in `serve'
+actionpack (5.2.4.1) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.4.1) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.4.1) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.4.1) lib/action_dispatch/routing/route_set.rb:840:in `call'
+omniauth (1.9.0) lib/omniauth/strategy.rb:192:in `call!'
+omniauth (1.9.0) lib/omniauth/strategy.rb:169:in `call'
+warden (1.2.8) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.8) lib/warden/manager.rb:34:in `catch'
+warden (1.2.8) lib/warden/manager.rb:34:in `call'
+rack (2.1.2) lib/rack/tempfile_reaper.rb:17:in `call'
+rack (2.1.2) lib/rack/etag.rb:27:in `call'
+rack (2.1.2) lib/rack/conditional_get.rb:40:in `call'
+rack (2.1.2) lib/rack/head.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.1.2) lib/rack/session/abstract/id.rb:269:in `context'
+rack (2.1.2) lib/rack/session/abstract/id.rb:263:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.4.1) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.1.2) lib/rack/method_override.rb:24:in `call'
+rack (2.1.2) lib/rack/runtime.rb:24:in `call'
+activesupport (5.2.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.1.2) lib/rack/sendfile.rb:113:in `call'
+railties (5.2.4.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for ::1 at 2020-02-11 15:11:20 -0600
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by PagesController#feed as HTML
+Completed 401 Unauthorized in 17ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-02-11 15:11:21 -0600
+Processing by Devise::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (3.0ms)
+  Rendered users/sessions/new.html.erb within layouts/application (14.5ms)
+  Rendered layouts/_navbar.html.erb (1.1ms)
+Completed 200 OK in 535ms (Views: 464.4ms | ActiveRecord: 11.5ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-02-11 15:11:37 -0600
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (2.2ms)
+  Rendered devise/shared/_links.html.erb (2.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (12.0ms)
+  Rendered layouts/_navbar.html.erb (4.4ms)
+Completed 200 OK in 78ms (Views: 72.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2020-02-11 15:11:46 -0600
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"D8usfktRrMHUx/SKaMg24dYLunKjyrRkFCSLtfPcb61xHqSEr53OsCO/6a2NrwxktokKiBrUSL1bYzx+U7F2Nw==", "user"=>{"email"=>"mike.fari+222@gmail.com", "name"=>"LUIS PUENTE", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+Unpermitted parameter: :password_confirmation
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Exists (1.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "mike.fari+222@gmail.com"], ["LIMIT", 1]]
+  ↳ /home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "name", "confirmation_token", "confirmation_sent_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["email", "mike.fari+222@gmail.com"], ["encrypted_password", "$2a$11$LpewMRby9DotE9z.XQrWOuluuROYmMm4YXEZVaGfxkV9KeJisi5dC"], ["created_at", "2020-02-11 21:11:46.460536"], ["updated_at", "2020-02-11 21:11:46.460536"], ["name", "LUIS PUENTE"], ["confirmation_token", "Ms5tsNM311dBCdMZ2JNg"], ["confirmation_sent_at", "2020-02-11 21:11:46.460702"]]
+  ↳ /home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  Rendering users/mailer/confirmation_instructions.html.erb
+  Rendered users/mailer/confirmation_instructions.html.erb (0.8ms)
+Devise::Mailer#confirmation_instructions: processed outbound mail in 83.9ms
+Sent mail to mike.fari+222@gmail.com (794.3ms)
+Date: Tue, 11 Feb 2020 15:11:46 -0600
+From: please-change-me-at-config-initializers-devise@example.com
+Reply-To: please-change-me-at-config-initializers-devise@example.com
+To: mike.fari+222@gmail.com
+Message-ID: <5e431892a9188_6e192b07b56f1b8855645@mkezmkez-Inspiron-3576.mail>
+Subject: Confirmation instructions
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>Welcome mike.fari+222@gmail.com!</p>
+
+<p>You can confirm your account email through the link below:</p>
+
+<p><a href="http://localhost:3000/users/confirmation?confirmation_token=Ms5tsNM311dBCdMZ2JNg">Confirm my account</a></p>
+
+Completed 500 Internal Server Error in 1200ms (ActiveRecord: 4.5ms)
+
+
+  
+OpenSSL::SSL::SSLError (hostname "mail.muchostacos.com.mx" does not match the server certificate):
+  
+/home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/2.6.0/openssl/ssl.rb:395:in `post_connection_check'
+/home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/2.6.0/net/smtp.rb:586:in `tlsconnect'
+/home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/2.6.0/net/smtp.rb:561:in `do_start'
+/home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/2.6.0/net/smtp.rb:518:in `start'
+mail (2.7.1) lib/mail/network/delivery_methods/smtp.rb:109:in `start_smtp_session'
+mail (2.7.1) lib/mail/network/delivery_methods/smtp.rb:100:in `deliver!'
+mail (2.7.1) lib/mail/message.rb:2159:in `do_delivery'
+mail (2.7.1) lib/mail/message.rb:260:in `block in deliver'
+actionmailer (5.2.4.1) lib/action_mailer/base.rb:560:in `block in deliver_mail'
+activesupport (5.2.4.1) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.4.1) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.4.1) lib/active_support/notifications.rb:168:in `instrument'
+actionmailer (5.2.4.1) lib/action_mailer/base.rb:558:in `deliver_mail'
+mail (2.7.1) lib/mail/message.rb:260:in `deliver'
+actionmailer (5.2.4.1) lib/action_mailer/message_delivery.rb:114:in `block in deliver_now'
+actionmailer (5.2.4.1) lib/action_mailer/rescuable.rb:17:in `handle_exceptions'
+actionmailer (5.2.4.1) lib/action_mailer/message_delivery.rb:113:in `deliver_now'
+devise (4.7.1) lib/devise/models/authenticatable.rb:199:in `send_devise_notification'
+devise (4.7.1) lib/devise/models/confirmable.rb:121:in `send_confirmation_instructions'
+devise (4.7.1) lib/devise/models/confirmable.rb:183:in `send_on_create_confirmation_instructions'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:426:in `block in make_lambda'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:261:in `block in conditional'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:517:in `block in invoke_after'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:517:in `each'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:517:in `invoke_after'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:133:in `run_callbacks'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:816:in `_run_commit_callbacks'
+activerecord (5.2.4.1) lib/active_record/transactions.rb:347:in `committed!'
+activerecord (5.2.4.1) lib/active_record/connection_adapters/abstract/transaction.rb:128:in `commit_records'
+activerecord (5.2.4.1) lib/active_record/connection_adapters/abstract/transaction.rb:223:in `block in commit_transaction'
+/home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/2.6.0/monitor.rb:235:in `mon_synchronize'
+activerecord (5.2.4.1) lib/active_record/connection_adapters/abstract/transaction.rb:213:in `commit_transaction'
+activerecord (5.2.4.1) lib/active_record/connection_adapters/abstract/transaction.rb:252:in `block in within_new_transaction'
+/home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/2.6.0/monitor.rb:235:in `mon_synchronize'
+activerecord (5.2.4.1) lib/active_record/connection_adapters/abstract/transaction.rb:236:in `within_new_transaction'
+activerecord (5.2.4.1) lib/active_record/connection_adapters/abstract/database_statements.rb:267:in `transaction'
+activerecord (5.2.4.1) lib/active_record/transactions.rb:212:in `transaction'
+activerecord (5.2.4.1) lib/active_record/transactions.rb:385:in `with_transaction_returning_status'
+activerecord (5.2.4.1) lib/active_record/transactions.rb:310:in `block in save'
+activerecord (5.2.4.1) lib/active_record/transactions.rb:325:in `rollback_active_record_state!'
+activerecord (5.2.4.1) lib/active_record/transactions.rb:309:in `save'
+activerecord (5.2.4.1) lib/active_record/suppressor.rb:44:in `save'
+devise (4.7.1) app/controllers/devise/registrations_controller.rb:19:in `create'
+actionpack (5.2.4.1) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (5.2.4.1) lib/abstract_controller/base.rb:194:in `process_action'
+actionpack (5.2.4.1) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.2.4.1) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:132:in `run_callbacks'
+actionpack (5.2.4.1) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.4.1) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.4.1) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.4.1) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.4.1) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.4.1) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.4.1) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.4.1) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.4.1) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.4.1) lib/abstract_controller/base.rb:134:in `process'
+actionview (5.2.4.1) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.4.1) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.4.1) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.4.1) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.4.1) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.4.1) lib/action_dispatch/routing/mapper.rb:18:in `block in <class:Constraints>'
+actionpack (5.2.4.1) lib/action_dispatch/routing/mapper.rb:48:in `serve'
+actionpack (5.2.4.1) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.4.1) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.4.1) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.4.1) lib/action_dispatch/routing/route_set.rb:840:in `call'
+omniauth (1.9.0) lib/omniauth/strategy.rb:192:in `call!'
+omniauth (1.9.0) lib/omniauth/strategy.rb:169:in `call'
+warden (1.2.8) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.8) lib/warden/manager.rb:34:in `catch'
+warden (1.2.8) lib/warden/manager.rb:34:in `call'
+rack (2.1.2) lib/rack/tempfile_reaper.rb:17:in `call'
+rack (2.1.2) lib/rack/etag.rb:27:in `call'
+rack (2.1.2) lib/rack/conditional_get.rb:40:in `call'
+rack (2.1.2) lib/rack/head.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.1.2) lib/rack/session/abstract/id.rb:269:in `context'
+rack (2.1.2) lib/rack/session/abstract/id.rb:263:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.4.1) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.1.2) lib/rack/method_override.rb:24:in `call'
+rack (2.1.2) lib/rack/runtime.rb:24:in `call'
+activesupport (5.2.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.1.2) lib/rack/sendfile.rb:113:in `call'
+railties (5.2.4.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/users/sign_up" for ::1 at 2020-02-11 15:12:29 -0600
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.8ms)
+  Rendered devise/shared/_links.html.erb (1.5ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (10.6ms)
+  Rendered layouts/_navbar.html.erb (1.7ms)
+Completed 200 OK in 76ms (Views: 74.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2020-02-11 15:12:47 -0600
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"epVX/EG2o76ezsvBZ/c/YyOqEdRV6WLGcKLum/HlWrnuKGCodFcDhcULzyT1cyNBxnuP8mrIlnY/BQX8TS9z7w==", "user"=>{"email"=>"mike.fari+333@gmail.com", "name"=>"ssss aaa", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+Unpermitted parameter: :password_confirmation
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Exists (1.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "mike.fari+333@gmail.com"], ["LIMIT", 1]]
+  ↳ /home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "name", "confirmation_token", "confirmation_sent_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["email", "mike.fari+333@gmail.com"], ["encrypted_password", "$2a$11$becze6.JGSz1XIwrCXS5/uN7CWIeXBGB0LEhy4a.EACVh7AhjiLdS"], ["created_at", "2020-02-11 21:12:47.657851"], ["updated_at", "2020-02-11 21:12:47.657851"], ["name", "ssss aaa"], ["confirmation_token", "CW29rxBRtFjoGjjA-yzy"], ["confirmation_sent_at", "2020-02-11 21:12:47.657956"]]
+  ↳ /home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  Rendering users/mailer/confirmation_instructions.html.erb
+  Rendered users/mailer/confirmation_instructions.html.erb (0.6ms)
+Devise::Mailer#confirmation_instructions: processed outbound mail in 11.3ms
+Sent mail to mike.fari+333@gmail.com (580.7ms)
+Date: Tue, 11 Feb 2020 15:12:47 -0600
+From: please-change-me-at-config-initializers-devise@example.com
+Reply-To: please-change-me-at-config-initializers-devise@example.com
+To: mike.fari+333@gmail.com
+Message-ID: <5e4318cfa4a68_6e192b07b56f1a0c55772@mkezmkez-Inspiron-3576.mail>
+Subject: Confirmation instructions
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>Welcome mike.fari+333@gmail.com!</p>
+
+<p>You can confirm your account email through the link below:</p>
+
+<p><a href="http://localhost:3000/users/confirmation?confirmation_token=CW29rxBRtFjoGjjA-yzy">Confirm my account</a></p>
+
+Completed 500 Internal Server Error in 771ms (ActiveRecord: 4.2ms)
+
+
+  
+OpenSSL::SSL::SSLError (hostname "mail.muchostacos.com.mx" does not match the server certificate):
+  
+/home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/2.6.0/openssl/ssl.rb:395:in `post_connection_check'
+/home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/2.6.0/net/smtp.rb:586:in `tlsconnect'
+/home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/2.6.0/net/smtp.rb:561:in `do_start'
+/home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/2.6.0/net/smtp.rb:518:in `start'
+mail (2.7.1) lib/mail/network/delivery_methods/smtp.rb:109:in `start_smtp_session'
+mail (2.7.1) lib/mail/network/delivery_methods/smtp.rb:100:in `deliver!'
+mail (2.7.1) lib/mail/message.rb:2159:in `do_delivery'
+mail (2.7.1) lib/mail/message.rb:260:in `block in deliver'
+actionmailer (5.2.4.1) lib/action_mailer/base.rb:560:in `block in deliver_mail'
+activesupport (5.2.4.1) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.4.1) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.4.1) lib/active_support/notifications.rb:168:in `instrument'
+actionmailer (5.2.4.1) lib/action_mailer/base.rb:558:in `deliver_mail'
+mail (2.7.1) lib/mail/message.rb:260:in `deliver'
+actionmailer (5.2.4.1) lib/action_mailer/message_delivery.rb:114:in `block in deliver_now'
+actionmailer (5.2.4.1) lib/action_mailer/rescuable.rb:17:in `handle_exceptions'
+actionmailer (5.2.4.1) lib/action_mailer/message_delivery.rb:113:in `deliver_now'
+devise (4.7.1) lib/devise/models/authenticatable.rb:199:in `send_devise_notification'
+devise (4.7.1) lib/devise/models/confirmable.rb:121:in `send_confirmation_instructions'
+devise (4.7.1) lib/devise/models/confirmable.rb:183:in `send_on_create_confirmation_instructions'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:426:in `block in make_lambda'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:261:in `block in conditional'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:517:in `block in invoke_after'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:517:in `each'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:517:in `invoke_after'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:133:in `run_callbacks'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:816:in `_run_commit_callbacks'
+activerecord (5.2.4.1) lib/active_record/transactions.rb:347:in `committed!'
+activerecord (5.2.4.1) lib/active_record/connection_adapters/abstract/transaction.rb:128:in `commit_records'
+activerecord (5.2.4.1) lib/active_record/connection_adapters/abstract/transaction.rb:223:in `block in commit_transaction'
+/home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/2.6.0/monitor.rb:235:in `mon_synchronize'
+activerecord (5.2.4.1) lib/active_record/connection_adapters/abstract/transaction.rb:213:in `commit_transaction'
+activerecord (5.2.4.1) lib/active_record/connection_adapters/abstract/transaction.rb:252:in `block in within_new_transaction'
+/home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/2.6.0/monitor.rb:235:in `mon_synchronize'
+activerecord (5.2.4.1) lib/active_record/connection_adapters/abstract/transaction.rb:236:in `within_new_transaction'
+activerecord (5.2.4.1) lib/active_record/connection_adapters/abstract/database_statements.rb:267:in `transaction'
+activerecord (5.2.4.1) lib/active_record/transactions.rb:212:in `transaction'
+activerecord (5.2.4.1) lib/active_record/transactions.rb:385:in `with_transaction_returning_status'
+activerecord (5.2.4.1) lib/active_record/transactions.rb:310:in `block in save'
+activerecord (5.2.4.1) lib/active_record/transactions.rb:325:in `rollback_active_record_state!'
+activerecord (5.2.4.1) lib/active_record/transactions.rb:309:in `save'
+activerecord (5.2.4.1) lib/active_record/suppressor.rb:44:in `save'
+devise (4.7.1) app/controllers/devise/registrations_controller.rb:19:in `create'
+actionpack (5.2.4.1) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (5.2.4.1) lib/abstract_controller/base.rb:194:in `process_action'
+actionpack (5.2.4.1) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.2.4.1) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:132:in `run_callbacks'
+actionpack (5.2.4.1) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.4.1) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.4.1) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.4.1) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.4.1) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.4.1) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.4.1) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.4.1) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.4.1) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.4.1) lib/abstract_controller/base.rb:134:in `process'
+actionview (5.2.4.1) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.4.1) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.4.1) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.4.1) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.4.1) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.4.1) lib/action_dispatch/routing/mapper.rb:18:in `block in <class:Constraints>'
+actionpack (5.2.4.1) lib/action_dispatch/routing/mapper.rb:48:in `serve'
+actionpack (5.2.4.1) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.4.1) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.4.1) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.4.1) lib/action_dispatch/routing/route_set.rb:840:in `call'
+omniauth (1.9.0) lib/omniauth/strategy.rb:192:in `call!'
+omniauth (1.9.0) lib/omniauth/strategy.rb:169:in `call'
+warden (1.2.8) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.8) lib/warden/manager.rb:34:in `catch'
+warden (1.2.8) lib/warden/manager.rb:34:in `call'
+rack (2.1.2) lib/rack/tempfile_reaper.rb:17:in `call'
+rack (2.1.2) lib/rack/etag.rb:27:in `call'
+rack (2.1.2) lib/rack/conditional_get.rb:40:in `call'
+rack (2.1.2) lib/rack/head.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.1.2) lib/rack/session/abstract/id.rb:269:in `context'
+rack (2.1.2) lib/rack/session/abstract/id.rb:263:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.4.1) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.1.2) lib/rack/method_override.rb:24:in `call'
+rack (2.1.2) lib/rack/runtime.rb:24:in `call'
+activesupport (5.2.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.1.2) lib/rack/sendfile.rb:113:in `call'
+railties (5.2.4.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started POST "/users" for ::1 at 2020-02-11 15:18:37 -0600
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"epVX/EG2o76ezsvBZ/c/YyOqEdRV6WLGcKLum/HlWrnuKGCodFcDhcULzyT1cyNBxnuP8mrIlnY/BQX8TS9z7w==", "user"=>{"email"=>"showinfantil@gmail.com", "name"=>"israel", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+Unpermitted parameter: :password_confirmation
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Exists (1.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "showinfantil@gmail.com"], ["LIMIT", 1]]
+  ↳ /home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "name", "confirmation_token", "confirmation_sent_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["email", "showinfantil@gmail.com"], ["encrypted_password", "$2a$11$LHlds5a6huY6aU5ZstS3cuSkywKwbGobPUygDncc.3UIjkGgT4xia"], ["created_at", "2020-02-11 21:18:38.050632"], ["updated_at", "2020-02-11 21:18:38.050632"], ["name", "israel"], ["confirmation_token", "tAtAn2EHKeZ_fiL1K8So"], ["confirmation_sent_at", "2020-02-11 21:18:38.050825"]]
+  ↳ /home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  Rendering users/mailer/confirmation_instructions.html.erb
+  Rendered users/mailer/confirmation_instructions.html.erb (1.8ms)
+Devise::Mailer#confirmation_instructions: processed outbound mail in 45.2ms
+Sent mail to showinfantil@gmail.com (432.1ms)
+Date: Tue, 11 Feb 2020 15:18:38 -0600
+From: please-change-me-at-config-initializers-devise@example.com
+Reply-To: please-change-me-at-config-initializers-devise@example.com
+To: showinfantil@gmail.com
+Message-ID: <5e431a2e45a0e_71422abdca88250449669@mkezmkez-Inspiron-3576.mail>
+Subject: Confirmation instructions
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>Welcome showinfantil@gmail.com!</p>
+
+<p>You can confirm your account email through the link below:</p>
+
+<p><a href="http://localhost:3000/users/confirmation?confirmation_token=tAtAn2EHKeZ_fiL1K8So">Confirm my account</a></p>
+
+Completed 500 Internal Server Error in 878ms (ActiveRecord: 12.6ms)
+
+
+  
+Net::SMTPAuthenticationError (535-5.7.8 Username and Password not accepted. Learn more at
+):
+  
+/home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/2.6.0/net/smtp.rb:981:in `check_auth_response'
+/home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/2.6.0/net/smtp.rb:736:in `auth_plain'
+/home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/2.6.0/net/smtp.rb:728:in `authenticate'
+/home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/2.6.0/net/smtp.rb:565:in `do_start'
+/home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/2.6.0/net/smtp.rb:518:in `start'
+mail (2.7.1) lib/mail/network/delivery_methods/smtp.rb:109:in `start_smtp_session'
+mail (2.7.1) lib/mail/network/delivery_methods/smtp.rb:100:in `deliver!'
+mail (2.7.1) lib/mail/message.rb:2159:in `do_delivery'
+mail (2.7.1) lib/mail/message.rb:260:in `block in deliver'
+actionmailer (5.2.4.1) lib/action_mailer/base.rb:560:in `block in deliver_mail'
+activesupport (5.2.4.1) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.4.1) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.4.1) lib/active_support/notifications.rb:168:in `instrument'
+actionmailer (5.2.4.1) lib/action_mailer/base.rb:558:in `deliver_mail'
+mail (2.7.1) lib/mail/message.rb:260:in `deliver'
+actionmailer (5.2.4.1) lib/action_mailer/message_delivery.rb:114:in `block in deliver_now'
+actionmailer (5.2.4.1) lib/action_mailer/rescuable.rb:17:in `handle_exceptions'
+actionmailer (5.2.4.1) lib/action_mailer/message_delivery.rb:113:in `deliver_now'
+devise (4.7.1) lib/devise/models/authenticatable.rb:199:in `send_devise_notification'
+devise (4.7.1) lib/devise/models/confirmable.rb:121:in `send_confirmation_instructions'
+devise (4.7.1) lib/devise/models/confirmable.rb:183:in `send_on_create_confirmation_instructions'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:426:in `block in make_lambda'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:261:in `block in conditional'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:517:in `block in invoke_after'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:517:in `each'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:517:in `invoke_after'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:133:in `run_callbacks'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:816:in `_run_commit_callbacks'
+activerecord (5.2.4.1) lib/active_record/transactions.rb:347:in `committed!'
+activerecord (5.2.4.1) lib/active_record/connection_adapters/abstract/transaction.rb:128:in `commit_records'
+activerecord (5.2.4.1) lib/active_record/connection_adapters/abstract/transaction.rb:223:in `block in commit_transaction'
+/home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/2.6.0/monitor.rb:235:in `mon_synchronize'
+activerecord (5.2.4.1) lib/active_record/connection_adapters/abstract/transaction.rb:213:in `commit_transaction'
+activerecord (5.2.4.1) lib/active_record/connection_adapters/abstract/transaction.rb:252:in `block in within_new_transaction'
+/home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/2.6.0/monitor.rb:235:in `mon_synchronize'
+activerecord (5.2.4.1) lib/active_record/connection_adapters/abstract/transaction.rb:236:in `within_new_transaction'
+activerecord (5.2.4.1) lib/active_record/connection_adapters/abstract/database_statements.rb:267:in `transaction'
+activerecord (5.2.4.1) lib/active_record/transactions.rb:212:in `transaction'
+activerecord (5.2.4.1) lib/active_record/transactions.rb:385:in `with_transaction_returning_status'
+activerecord (5.2.4.1) lib/active_record/transactions.rb:310:in `block in save'
+activerecord (5.2.4.1) lib/active_record/transactions.rb:325:in `rollback_active_record_state!'
+activerecord (5.2.4.1) lib/active_record/transactions.rb:309:in `save'
+activerecord (5.2.4.1) lib/active_record/suppressor.rb:44:in `save'
+devise (4.7.1) app/controllers/devise/registrations_controller.rb:19:in `create'
+actionpack (5.2.4.1) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (5.2.4.1) lib/abstract_controller/base.rb:194:in `process_action'
+actionpack (5.2.4.1) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.2.4.1) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:132:in `run_callbacks'
+actionpack (5.2.4.1) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.4.1) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.4.1) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.4.1) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.4.1) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.4.1) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.4.1) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.4.1) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.4.1) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.4.1) lib/abstract_controller/base.rb:134:in `process'
+actionview (5.2.4.1) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.4.1) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.4.1) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.4.1) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.4.1) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.4.1) lib/action_dispatch/routing/mapper.rb:18:in `block in <class:Constraints>'
+actionpack (5.2.4.1) lib/action_dispatch/routing/mapper.rb:48:in `serve'
+actionpack (5.2.4.1) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.4.1) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.4.1) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.4.1) lib/action_dispatch/routing/route_set.rb:840:in `call'
+omniauth (1.9.0) lib/omniauth/strategy.rb:192:in `call!'
+omniauth (1.9.0) lib/omniauth/strategy.rb:169:in `call'
+warden (1.2.8) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.8) lib/warden/manager.rb:34:in `catch'
+warden (1.2.8) lib/warden/manager.rb:34:in `call'
+rack (2.1.2) lib/rack/tempfile_reaper.rb:17:in `call'
+rack (2.1.2) lib/rack/etag.rb:27:in `call'
+rack (2.1.2) lib/rack/conditional_get.rb:40:in `call'
+rack (2.1.2) lib/rack/head.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.1.2) lib/rack/session/abstract/id.rb:269:in `context'
+rack (2.1.2) lib/rack/session/abstract/id.rb:263:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.4.1) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.1.2) lib/rack/method_override.rb:24:in `call'
+rack (2.1.2) lib/rack/runtime.rb:24:in `call'
+activesupport (5.2.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.1.2) lib/rack/sendfile.rb:113:in `call'
+railties (5.2.4.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started POST "/users" for ::1 at 2020-02-11 15:19:20 -0600
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"epVX/EG2o76ezsvBZ/c/YyOqEdRV6WLGcKLum/HlWrnuKGCodFcDhcULzyT1cyNBxnuP8mrIlnY/BQX8TS9z7w==", "user"=>{"email"=>"showinfantil+2@gmail.com", "name"=>"israel", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+Unpermitted parameter: :password_confirmation
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "showinfantil+2@gmail.com"], ["LIMIT", 1]]
+  ↳ /home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "name", "confirmation_token", "confirmation_sent_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["email", "showinfantil+2@gmail.com"], ["encrypted_password", "$2a$11$FS9PHcsV7mwc5onlOxcrLu6kKLYNY9DTwqrY7H6NHKvGSqH8.ALjG"], ["created_at", "2020-02-11 21:19:20.423468"], ["updated_at", "2020-02-11 21:19:20.423468"], ["name", "israel"], ["confirmation_token", "osYsDsZBcTTade-49C-w"], ["confirmation_sent_at", "2020-02-11 21:19:20.423575"]]
+  ↳ /home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  Rendering users/mailer/confirmation_instructions.html.erb
+  Rendered users/mailer/confirmation_instructions.html.erb (0.9ms)
+Devise::Mailer#confirmation_instructions: processed outbound mail in 10.1ms
+Sent mail to showinfantil+2@gmail.com (406.3ms)
+Date: Tue, 11 Feb 2020 15:19:20 -0600
+From: please-change-me-at-config-initializers-devise@example.com
+Reply-To: please-change-me-at-config-initializers-devise@example.com
+To: showinfantil+2@gmail.com
+Message-ID: <5e431a586bcba_71422abdca88227049759@mkezmkez-Inspiron-3576.mail>
+Subject: Confirmation instructions
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>Welcome showinfantil+2@gmail.com!</p>
+
+<p>You can confirm your account email through the link below:</p>
+
+<p><a href="http://localhost:3000/users/confirmation?confirmation_token=osYsDsZBcTTade-49C-w">Confirm my account</a></p>
+
+Completed 500 Internal Server Error in 608ms (ActiveRecord: 3.0ms)
+
+
+  
+Net::SMTPAuthenticationError (535-5.7.8 Username and Password not accepted. Learn more at
+):
+  
+/home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/2.6.0/net/smtp.rb:981:in `check_auth_response'
+/home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/2.6.0/net/smtp.rb:736:in `auth_plain'
+/home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/2.6.0/net/smtp.rb:728:in `authenticate'
+/home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/2.6.0/net/smtp.rb:565:in `do_start'
+/home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/2.6.0/net/smtp.rb:518:in `start'
+mail (2.7.1) lib/mail/network/delivery_methods/smtp.rb:109:in `start_smtp_session'
+mail (2.7.1) lib/mail/network/delivery_methods/smtp.rb:100:in `deliver!'
+mail (2.7.1) lib/mail/message.rb:2159:in `do_delivery'
+mail (2.7.1) lib/mail/message.rb:260:in `block in deliver'
+actionmailer (5.2.4.1) lib/action_mailer/base.rb:560:in `block in deliver_mail'
+activesupport (5.2.4.1) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.4.1) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.4.1) lib/active_support/notifications.rb:168:in `instrument'
+actionmailer (5.2.4.1) lib/action_mailer/base.rb:558:in `deliver_mail'
+mail (2.7.1) lib/mail/message.rb:260:in `deliver'
+actionmailer (5.2.4.1) lib/action_mailer/message_delivery.rb:114:in `block in deliver_now'
+actionmailer (5.2.4.1) lib/action_mailer/rescuable.rb:17:in `handle_exceptions'
+actionmailer (5.2.4.1) lib/action_mailer/message_delivery.rb:113:in `deliver_now'
+devise (4.7.1) lib/devise/models/authenticatable.rb:199:in `send_devise_notification'
+devise (4.7.1) lib/devise/models/confirmable.rb:121:in `send_confirmation_instructions'
+devise (4.7.1) lib/devise/models/confirmable.rb:183:in `send_on_create_confirmation_instructions'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:426:in `block in make_lambda'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:261:in `block in conditional'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:517:in `block in invoke_after'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:517:in `each'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:517:in `invoke_after'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:133:in `run_callbacks'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:816:in `_run_commit_callbacks'
+activerecord (5.2.4.1) lib/active_record/transactions.rb:347:in `committed!'
+activerecord (5.2.4.1) lib/active_record/connection_adapters/abstract/transaction.rb:128:in `commit_records'
+activerecord (5.2.4.1) lib/active_record/connection_adapters/abstract/transaction.rb:223:in `block in commit_transaction'
+/home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/2.6.0/monitor.rb:235:in `mon_synchronize'
+activerecord (5.2.4.1) lib/active_record/connection_adapters/abstract/transaction.rb:213:in `commit_transaction'
+activerecord (5.2.4.1) lib/active_record/connection_adapters/abstract/transaction.rb:252:in `block in within_new_transaction'
+/home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/2.6.0/monitor.rb:235:in `mon_synchronize'
+activerecord (5.2.4.1) lib/active_record/connection_adapters/abstract/transaction.rb:236:in `within_new_transaction'
+activerecord (5.2.4.1) lib/active_record/connection_adapters/abstract/database_statements.rb:267:in `transaction'
+activerecord (5.2.4.1) lib/active_record/transactions.rb:212:in `transaction'
+activerecord (5.2.4.1) lib/active_record/transactions.rb:385:in `with_transaction_returning_status'
+activerecord (5.2.4.1) lib/active_record/transactions.rb:310:in `block in save'
+activerecord (5.2.4.1) lib/active_record/transactions.rb:325:in `rollback_active_record_state!'
+activerecord (5.2.4.1) lib/active_record/transactions.rb:309:in `save'
+activerecord (5.2.4.1) lib/active_record/suppressor.rb:44:in `save'
+devise (4.7.1) app/controllers/devise/registrations_controller.rb:19:in `create'
+actionpack (5.2.4.1) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (5.2.4.1) lib/abstract_controller/base.rb:194:in `process_action'
+actionpack (5.2.4.1) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.2.4.1) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:132:in `run_callbacks'
+actionpack (5.2.4.1) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.4.1) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.4.1) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.4.1) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.4.1) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.4.1) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.4.1) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.4.1) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.4.1) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.4.1) lib/abstract_controller/base.rb:134:in `process'
+actionview (5.2.4.1) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.4.1) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.4.1) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.4.1) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.4.1) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.4.1) lib/action_dispatch/routing/mapper.rb:18:in `block in <class:Constraints>'
+actionpack (5.2.4.1) lib/action_dispatch/routing/mapper.rb:48:in `serve'
+actionpack (5.2.4.1) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.4.1) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.4.1) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.4.1) lib/action_dispatch/routing/route_set.rb:840:in `call'
+omniauth (1.9.0) lib/omniauth/strategy.rb:192:in `call!'
+omniauth (1.9.0) lib/omniauth/strategy.rb:169:in `call'
+warden (1.2.8) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.8) lib/warden/manager.rb:34:in `catch'
+warden (1.2.8) lib/warden/manager.rb:34:in `call'
+rack (2.1.2) lib/rack/tempfile_reaper.rb:17:in `call'
+rack (2.1.2) lib/rack/etag.rb:27:in `call'
+rack (2.1.2) lib/rack/conditional_get.rb:40:in `call'
+rack (2.1.2) lib/rack/head.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.1.2) lib/rack/session/abstract/id.rb:269:in `context'
+rack (2.1.2) lib/rack/session/abstract/id.rb:263:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.4.1) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.1.2) lib/rack/method_override.rb:24:in `call'
+rack (2.1.2) lib/rack/runtime.rb:24:in `call'
+activesupport (5.2.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.1.2) lib/rack/sendfile.rb:113:in `call'
+railties (5.2.4.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/users/sign_up" for ::1 at 2020-02-11 15:19:27 -0600
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.8ms)
+  Rendered devise/shared/_links.html.erb (2.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (22.9ms)
+  Rendered layouts/_navbar.html.erb (1.1ms)
+Completed 200 OK in 483ms (Views: 481.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-02-11 15:19:28 -0600
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.9ms)
+  Rendered devise/shared/_links.html.erb (3.9ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (16.0ms)
+  Rendered layouts/_navbar.html.erb (1.2ms)
+Completed 200 OK in 93ms (Views: 90.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-02-11 15:19:40 -0600
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.4ms)
+  Rendered devise/shared/_links.html.erb (1.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (8.8ms)
+  Rendered layouts/_navbar.html.erb (1.0ms)
+Completed 200 OK in 523ms (Views: 482.7ms | ActiveRecord: 5.4ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-02-11 15:19:41 -0600
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (1.3ms)
+  Rendered devise/shared/_links.html.erb (4.4ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (21.2ms)
+  Rendered layouts/_navbar.html.erb (1.5ms)
+Completed 200 OK in 126ms (Views: 124.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2020-02-11 15:20:05 -0600
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Qd0U5aDyrBuw2Q+lDFzgn1cVOg+vwU9fiadkQZHD57PVYCOxlRMMIOscC0Ce2Py9ssSkKZDgu+/GAI8mLQnO5Q==", "user"=>{"email"=>"showinfantil+3@gmail.com", "name"=>"israe", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+Unpermitted parameter: :password_confirmation
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "showinfantil+3@gmail.com"], ["LIMIT", 1]]
+  ↳ /home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "name", "confirmation_token", "confirmation_sent_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["email", "showinfantil+3@gmail.com"], ["encrypted_password", "$2a$11$2LFh.V7D5cj0naZtutm.t.hTc0vTCKKtLTfxXXz0.MFQmnPbrphq6"], ["created_at", "2020-02-11 21:20:05.175638"], ["updated_at", "2020-02-11 21:20:05.175638"], ["name", "israe"], ["confirmation_token", "vijVSRnRLY8Teynuy9UK"], ["confirmation_sent_at", "2020-02-11 21:20:05.175786"]]
+  ↳ /home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (4.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  Rendering users/mailer/confirmation_instructions.html.erb
+  Rendered users/mailer/confirmation_instructions.html.erb (0.9ms)
+Devise::Mailer#confirmation_instructions: processed outbound mail in 43.0ms
+Sent mail to showinfantil+3@gmail.com (1272.1ms)
+Date: Tue, 11 Feb 2020 15:20:05 -0600
+From: please-change-me-at-config-initializers-devise@example.com
+Reply-To: please-change-me-at-config-initializers-devise@example.com
+To: showinfantil+3@gmail.com
+Message-ID: <5e431a8553607_72312b050637603c139da@mkezmkez-Inspiron-3576.mail>
+Subject: Confirmation instructions
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>Welcome showinfantil+3@gmail.com!</p>
+
+<p>You can confirm your account email through the link below:</p>
+
+<p><a href="http://localhost:3000/users/confirmation?confirmation_token=vijVSRnRLY8Teynuy9UK">Confirm my account</a></p>
+
+Redirected to http://localhost:3000/
+Completed 302 Found in 1604ms (ActiveRecord: 6.5ms)
+
+
+Started GET "/" for ::1 at 2020-02-11 15:20:06 -0600
+Processing by PagesController#feed as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-02-11 15:20:06 -0600
+Processing by Devise::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (3.4ms)
+  Rendered users/sessions/new.html.erb within layouts/application (19.7ms)
+  Rendered layouts/_navbar.html.erb (2.0ms)
+Completed 200 OK in 88ms (Views: 86.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-02-11 15:22:22 -0600
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (1.2ms)
+  Rendered devise/shared/_links.html.erb (2.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (12.8ms)
+  Rendered layouts/_navbar.html.erb (1.5ms)
+Completed 200 OK in 121ms (Views: 119.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2020-02-11 15:22:43 -0600
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"L5rUr5TxMNq9o+83sG0/zK/6Y2pyKeEIKaZQkaoKqjZRT9xVcD1Sq0rb8hBVCgVJz3jTkMs3HdFm4edaCmezrA==", "user"=>{"email"=>"mike.fari+44@gmail.com", "name"=>"mikii", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+Unpermitted parameter: :password_confirmation
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "mike.fari+44@gmail.com"], ["LIMIT", 1]]
+  ↳ /home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "name", "confirmation_token", "confirmation_sent_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["email", "mike.fari+44@gmail.com"], ["encrypted_password", "$2a$11$.EKcvvPGjyf71cB8.JqgKecIstBL86ayHdqAgbhP3dCHL5tJ1TQym"], ["created_at", "2020-02-11 21:22:43.434212"], ["updated_at", "2020-02-11 21:22:43.434212"], ["name", "mikii"], ["confirmation_token", "LFhhLGHxNxNWPt9Er-VP"], ["confirmation_sent_at", "2020-02-11 21:22:43.434846"]]
+  ↳ /home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (4.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  Rendering users/mailer/confirmation_instructions.html.erb
+  Rendered users/mailer/confirmation_instructions.html.erb (0.9ms)
+Devise::Mailer#confirmation_instructions: processed outbound mail in 17.2ms
+Sent mail to mike.fari+44@gmail.com (1060.1ms)
+Date: Tue, 11 Feb 2020 15:22:43 -0600
+From: please-change-me-at-config-initializers-devise@example.com
+Reply-To: please-change-me-at-config-initializers-devise@example.com
+To: mike.fari+44@gmail.com
+Message-ID: <5e431b23716b1_72312b050637bba4140c4@mkezmkez-Inspiron-3576.mail>
+Subject: Confirmation instructions
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>Welcome mike.fari+44@gmail.com!</p>
+
+<p>You can confirm your account email through the link below:</p>
+
+<p><a href="http://localhost:3000/users/confirmation?confirmation_token=LFhhLGHxNxNWPt9Er-VP">Confirm my account</a></p>
+
+Redirected to http://localhost:3000/
+Completed 302 Found in 1256ms (ActiveRecord: 5.5ms)
+
+
+Started GET "/" for ::1 at 2020-02-11 15:22:44 -0600
+Processing by PagesController#feed as HTML
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-02-11 15:22:44 -0600
+Processing by Devise::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (3.6ms)
+  Rendered users/sessions/new.html.erb within layouts/application (12.3ms)
+  Rendered layouts/_navbar.html.erb (2.3ms)
+Completed 200 OK in 134ms (Views: 132.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/confirmation?confirmation_token=LFhhLGHxNxNWPt9Er-VP" for ::1 at 2020-02-11 15:23:14 -0600
+Processing by Devise::ConfirmationsController#show as HTML
+  Parameters: {"confirmation_token"=>"LFhhLGHxNxNWPt9Er-VP"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."confirmation_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["confirmation_token", "LFhhLGHxNxNWPt9Er-VP"], ["LIMIT", 1]]
+  ↳ /home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Update (0.7ms)[0m  [1m[33mUPDATE "users" SET "confirmed_at" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["confirmed_at", "2020-02-11 21:23:14.830862"], ["updated_at", "2020-02-11 21:23:14.831942"], ["id", 16]]
+  ↳ /home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (2.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/users/sign_in
+Completed 302 Found in 21ms (ActiveRecord: 4.7ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-02-11 15:23:14 -0600
+Processing by Devise::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (2.0ms)
+  Rendered users/sessions/new.html.erb within layouts/application (6.2ms)
+  Rendered layouts/_navbar.html.erb (1.0ms)
+Completed 200 OK in 71ms (Views: 70.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_out" for ::1 at 2020-02-11 15:30:45 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/users/sign_out"):
+  
+actionpack (5.2.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.1.2) lib/rack/method_override.rb:24:in `call'
+rack (2.1.2) lib/rack/runtime.rb:24:in `call'
+activesupport (5.2.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.1.2) lib/rack/sendfile.rb:113:in `call'
+railties (5.2.4.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for ::1 at 2020-02-11 15:30:54 -0600
+Processing by PagesController#feed as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-02-11 15:30:54 -0600
+Processing by Devise::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (1.7ms)
+  Rendered users/sessions/new.html.erb within layouts/application (5.5ms)
+  Rendered layouts/_navbar.html.erb (1.6ms)
+Completed 200 OK in 47ms (Views: 44.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-02-11 15:30:55 -0600
+Processing by Devise::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (3.9ms)
+  Rendered users/sessions/new.html.erb within layouts/application (7.8ms)
+  Rendered layouts/_navbar.html.erb (1.4ms)
+Completed 200 OK in 50ms (Views: 49.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/auth/facebook" for ::1 at 2020-02-11 15:30:56 -0600
+Started GET "/users/auth/facebook" for ::1 at 2020-02-11 15:30:56 -0600
+Started GET "/users/auth/facebook/callback?code=AQCWWEJdNFf5IOM_zjFLMqMNcgEMnAsmf_qZ5jtF4ko_6dNMsvu-uo0dYS3H6dPjkBXNBLtYzZXyvz5vamNtoDMScW1Pl4e_p8GgkppZx5ELtYOyOcXY2yYPXRLuMa8SVRrZjbZytum8gGjC41LbjgMW5t3oQgkQazdmiNyIMehHbs6L7CCMgURDHbFw2kSW1lOS_MHClpCgOdc-inJOLv1BX4WWmrx4ti9AjWNeYdXyqKwjwXUSHpzHl4E0aqSf34A8WJfATJc5_kzZhrw08MWDvKWcRPkL4efDfy5b3rJXBJPoSbT4ERo4UdocMZ_MEfM&state=4ec6b139f1b635e349463a4a39655b005e94ccf7548b6b51" for ::1 at 2020-02-11 15:30:57 -0600
+Processing by Users::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQCWWEJdNFf5IOM_zjFLMqMNcgEMnAsmf_qZ5jtF4ko_6dNMsvu-uo0dYS3H6dPjkBXNBLtYzZXyvz5vamNtoDMScW1Pl4e_p8GgkppZx5ELtYOyOcXY2yYPXRLuMa8SVRrZjbZytum8gGjC41LbjgMW5t3oQgkQazdmiNyIMehHbs6L7CCMgURDHbFw2kSW1lOS_MHClpCgOdc-inJOLv1BX4WWmrx4ti9AjWNeYdXyqKwjwXUSHpzHl4E0aqSf34A8WJfATJc5_kzZhrw08MWDvKWcRPkL4efDfy5b3rJXBJPoSbT4ERo4UdocMZ_MEfM", "state"=>"4ec6b139f1b635e349463a4a39655b005e94ccf7548b6b51"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."provider" = $1 AND "users"."uid" = $2 ORDER BY "users"."id" ASC LIMIT $3[0m  [["provider", "facebook"], ["uid", "10159284542964692"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:17
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users/omniauth_callbacks_controller.rb:7
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users/omniauth_callbacks_controller.rb:7
+Completed 401 Unauthorized in 12ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-02-11 15:30:57 -0600
+Processing by Devise::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (3.2ms)
+  Rendered users/sessions/new.html.erb within layouts/application (7.9ms)
+  Rendered layouts/_navbar.html.erb (1.2ms)
+Completed 200 OK in 63ms (Views: 62.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-02-11 15:31:25 -0600
+Processing by Devise::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (1.4ms)
+  Rendered users/sessions/new.html.erb within layouts/application (9.0ms)
+  Rendered layouts/_navbar.html.erb (1.0ms)
+Completed 200 OK in 80ms (Views: 48.9ms | ActiveRecord: 9.6ms)
+
+
+Started GET "/users/auth/facebook" for ::1 at 2020-02-11 15:31:27 -0600
+Started GET "/users/auth/facebook" for ::1 at 2020-02-11 15:31:27 -0600
+Started GET "/users/auth/facebook/callback?code=AQDP2Djvzq-AYNAw0JwOYvgcxaw57GTxfk4iouX1qWJoqPycwa3y-Bb4SPXGvTDf5AEAN2T15BVgnY3P6PoSqm4eroOKRrMQ5z6TBD16G6W1pg9Sjjw18De8V9Tha4bSogzLBL3RqIdYSKDDHvd1KqCz297TLaW9hyfTfoFWS6L5n2ViT1Ewo6ah0Mb3Ur0_nZqyoM2bnshBdpevdizsbzFq8xNItPDvUUQtYk-BPpKCRuL1Y7ogph2sG1lv6f3SxZzsfPRrmkmyBgO7XFh_OMi_os72-gfLB7MEvTUhRMQExBhvCJTOhHc0dD_vEA8Omxk&state=74884e3f976907a41e064d2ed76bcad2cfc72d60dc1fb62d" for ::1 at 2020-02-11 15:31:27 -0600
+Processing by Users::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQDP2Djvzq-AYNAw0JwOYvgcxaw57GTxfk4iouX1qWJoqPycwa3y-Bb4SPXGvTDf5AEAN2T15BVgnY3P6PoSqm4eroOKRrMQ5z6TBD16G6W1pg9Sjjw18De8V9Tha4bSogzLBL3RqIdYSKDDHvd1KqCz297TLaW9hyfTfoFWS6L5n2ViT1Ewo6ah0Mb3Ur0_nZqyoM2bnshBdpevdizsbzFq8xNItPDvUUQtYk-BPpKCRuL1Y7ogph2sG1lv6f3SxZzsfPRrmkmyBgO7XFh_OMi_os72-gfLB7MEvTUhRMQExBhvCJTOhHc0dD_vEA8Omxk", "state"=>"74884e3f976907a41e064d2ed76bcad2cfc72d60dc1fb62d"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."provider" = $1 AND "users"."uid" = $2 ORDER BY "users"."id" ASC LIMIT $3[0m  [["provider", "facebook"], ["uid", "10159284542964692"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:17
+Redirected to http://localhost:3000/users/auth/facebook/callback?code=AQCWWEJdNFf5IOM_zjFLMqMNcgEMnAsmf_qZ5jtF4ko_6dNMsvu-uo0dYS3H6dPjkBXNBLtYzZXyvz5vamNtoDMScW1Pl4e_p8GgkppZx5ELtYOyOcXY2yYPXRLuMa8SVRrZjbZytum8gGjC41LbjgMW5t3oQgkQazdmiNyIMehHbs6L7CCMgURDHbFw2kSW1lOS_MHClpCgOdc-inJOLv1BX4WWmrx4ti9AjWNeYdXyqKwjwXUSHpzHl4E0aqSf34A8WJfATJc5_kzZhrw08MWDvKWcRPkL4efDfy5b3rJXBJPoSbT4ERo4UdocMZ_MEfM&state=4ec6b139f1b635e349463a4a39655b005e94ccf7548b6b51
+Completed 302 Found in 4ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/users/auth/facebook/callback?code=AQCWWEJdNFf5IOM_zjFLMqMNcgEMnAsmf_qZ5jtF4ko_6dNMsvu-uo0dYS3H6dPjkBXNBLtYzZXyvz5vamNtoDMScW1Pl4e_p8GgkppZx5ELtYOyOcXY2yYPXRLuMa8SVRrZjbZytum8gGjC41LbjgMW5t3oQgkQazdmiNyIMehHbs6L7CCMgURDHbFw2kSW1lOS_MHClpCgOdc-inJOLv1BX4WWmrx4ti9AjWNeYdXyqKwjwXUSHpzHl4E0aqSf34A8WJfATJc5_kzZhrw08MWDvKWcRPkL4efDfy5b3rJXBJPoSbT4ERo4UdocMZ_MEfM&state=4ec6b139f1b635e349463a4a39655b005e94ccf7548b6b51" for ::1 at 2020-02-11 15:31:27 -0600
+Processing by Users::OmniauthCallbacksController#failure as HTML
+  Parameters: {"code"=>"AQCWWEJdNFf5IOM_zjFLMqMNcgEMnAsmf_qZ5jtF4ko_6dNMsvu-uo0dYS3H6dPjkBXNBLtYzZXyvz5vamNtoDMScW1Pl4e_p8GgkppZx5ELtYOyOcXY2yYPXRLuMa8SVRrZjbZytum8gGjC41LbjgMW5t3oQgkQazdmiNyIMehHbs6L7CCMgURDHbFw2kSW1lOS_MHClpCgOdc-inJOLv1BX4WWmrx4ti9AjWNeYdXyqKwjwXUSHpzHl4E0aqSf34A8WJfATJc5_kzZhrw08MWDvKWcRPkL4efDfy5b3rJXBJPoSbT4ERo4UdocMZ_MEfM", "state"=>"4ec6b139f1b635e349463a4a39655b005e94ccf7548b6b51"}
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-02-11 15:31:27 -0600
+Processing by PagesController#feed as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ /home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mFriendship Load (2.8ms)[0m  [1m[34mSELECT "friendships".* FROM "friendships" WHERE "friendships"."user_id" = $1[0m  [["user_id", 6]]
+  ↳ app/controllers/pages_controller.rb:4
+  [1m[36mFriendship Load (0.7ms)[0m  [1m[34mSELECT "friendships".* FROM "friendships" WHERE "friendships"."friend_id" = $1[0m  [["friend_id", 6]]
+  ↳ app/controllers/pages_controller.rb:5
+  Rendering pages/feed.html.erb within layouts/application
+  Rendered posts/_form.html.erb (6.5ms)
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE (user_id IN (6)) ORDER BY "posts"."created_at" DESC[0m
+  ↳ app/views/pages/feed.html.erb:6
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:1
+  [1m[36mLike Load (1.0ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."likeable_id" = $1 AND "likes"."likeable_type" = $2[0m  [["likeable_id", 7], ["likeable_type", "Post"]]
+  ↳ app/views/posts/_post.html.erb:15
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."likeable_id" = $1 AND "likes"."likeable_type" = $2[0m  [["likeable_id", 7], ["likeable_type", "Post"]]
+  ↳ app/views/posts/_post.html.erb:21
+  Rendered posts/_post.html.erb (32.3ms)
+  [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 7]]
+  ↳ app/views/pages/feed.html.erb:9
+  Rendered pages/feed.html.erb within layouts/application (78.7ms)
+  Rendered layouts/_navbar.html.erb (0.6ms)
+Completed 200 OK in 205ms (Views: 118.5ms | ActiveRecord: 26.1ms)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2020-02-11 15:31:33 -0600
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"cAaQqLtrJ+tfQl6g+qsYXJPn/5MG8/Ka7QVMhPdT+L44tq742gdvs+PAwP5psImpIv145h/69R2ujAwRIksO6A=="}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ /home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (2.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 13ms (ActiveRecord: 4.4ms)
+
+
+Started GET "/" for ::1 at 2020-02-11 15:31:33 -0600
+Processing by PagesController#feed as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-02-11 15:31:33 -0600
+Processing by Devise::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (1.4ms)
+  Rendered users/sessions/new.html.erb within layouts/application (6.2ms)
+  Rendered layouts/_navbar.html.erb (1.9ms)
+Completed 200 OK in 61ms (Views: 57.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-02-11 15:31:37 -0600
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (1.3ms)
+  Rendered devise/shared/_links.html.erb (1.8ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (11.2ms)
+  Rendered layouts/_navbar.html.erb (1.8ms)
+Completed 200 OK in 128ms (Views: 124.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2020-02-11 15:31:58 -0600
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"j2X8IwcoaYvkAGZppcTnlgbmrDLTZjAWAreJaHfZLEsAuUHAEBd8PVPL4t8MVVHnCrzaY1iUq2BpvppYRkKIiA==", "user"=>{"email"=>"mike.fari+aaa@gmail.com", "name"=>"alex", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+Unpermitted parameter: :password_confirmation
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "mike.fari+aaa@gmail.com"], ["LIMIT", 1]]
+  ↳ /home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "name") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["email", "mike.fari+aaa@gmail.com"], ["encrypted_password", "$2a$11$allHtLoAEkA7GzhPhu5OgOR6gxDuYDAUJmAmoOvC.XYxSkUvMno5u"], ["created_at", "2020-02-11 21:31:58.423648"], ["updated_at", "2020-02-11 21:31:58.423648"], ["name", "alex"]]
+  ↳ /home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (3.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 150ms (ActiveRecord: 4.4ms)
+
+
+Started GET "/" for ::1 at 2020-02-11 15:31:58 -0600
+Processing by PagesController#feed as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ /home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mFriendship Load (0.5ms)[0m  [1m[34mSELECT "friendships".* FROM "friendships" WHERE "friendships"."user_id" = $1[0m  [["user_id", 17]]
+  ↳ app/controllers/pages_controller.rb:4
+  [1m[36mFriendship Load (0.4ms)[0m  [1m[34mSELECT "friendships".* FROM "friendships" WHERE "friendships"."friend_id" = $1[0m  [["friend_id", 17]]
+  ↳ app/controllers/pages_controller.rb:5
+  Rendering pages/feed.html.erb within layouts/application
+  Rendered posts/_form.html.erb (3.2ms)
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE (user_id IN (17)) ORDER BY "posts"."created_at" DESC[0m
+  ↳ app/views/pages/feed.html.erb:6
+  Rendered pages/feed.html.erb within layouts/application (8.4ms)
+  Rendered layouts/_navbar.html.erb (1.5ms)
+Completed 200 OK in 79ms (Views: 71.8ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-02-11 15:35:02 -0600
+Processing by Devise::RegistrationsController#new as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ /home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 40ms (ActiveRecord: 6.0ms)
+
+
+Started GET "/" for ::1 at 2020-02-11 15:35:02 -0600
+Processing by PagesController#feed as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ /home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mFriendship Load (0.5ms)[0m  [1m[34mSELECT "friendships".* FROM "friendships" WHERE "friendships"."user_id" = $1[0m  [["user_id", 17]]
+  ↳ app/controllers/pages_controller.rb:4
+  [1m[36mFriendship Load (1.1ms)[0m  [1m[34mSELECT "friendships".* FROM "friendships" WHERE "friendships"."friend_id" = $1[0m  [["friend_id", 17]]
+  ↳ app/controllers/pages_controller.rb:5
+  Rendering pages/feed.html.erb within layouts/application
+  Rendered posts/_form.html.erb (4.8ms)
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE (user_id IN (17)) ORDER BY "posts"."created_at" DESC[0m
+  ↳ app/views/pages/feed.html.erb:6
+  Rendered pages/feed.html.erb within layouts/application (8.5ms)
+  Rendered layouts/_navbar.html.erb (0.8ms)
+Completed 200 OK in 96ms (Views: 51.2ms | ActiveRecord: 10.6ms)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2020-02-11 15:35:05 -0600
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"WrA+egdg/eUN4rh1tFjWghs1Gm3PmPI7izFOdrZRwmLe1ovg1eMqAcJxe2pnCA/G0QrmN8S6qLq1zGVJwh9geg=="}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ /home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 8ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/" for ::1 at 2020-02-11 15:35:05 -0600
+Processing by PagesController#feed as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-02-11 15:35:05 -0600
+Processing by Devise::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (3.9ms)
+  Rendered users/sessions/new.html.erb within layouts/application (10.4ms)
+  Rendered layouts/_navbar.html.erb (2.0ms)
+Completed 200 OK in 57ms (Views: 55.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-02-11 15:35:12 -0600
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.9ms)
+  Rendered devise/shared/_links.html.erb (2.6ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (11.6ms)
+  Rendered layouts/_navbar.html.erb (1.1ms)
+Completed 200 OK in 126ms (Views: 124.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2020-02-11 15:35:27 -0600
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zsX42BRPXatI/SWeYmgXX0kq6k9Mx7Qgdp/3LmNJmz2x1BcVBXSIe2q8PSm1MnB9luaU9jQ2xQnSBJkI8OUbQw==", "user"=>{"email"=>"mike.fari+888@gmail.com", "name"=>"erne", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+Unpermitted parameter: :password_confirmation
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "mike.fari+888@gmail.com"], ["LIMIT", 1]]
+  ↳ /home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "name") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["email", "mike.fari+888@gmail.com"], ["encrypted_password", "$2a$11$16sngRWUetKjr.BNb5BtV.hRUcksu2Ykmq0uVrZG9QVMNeO78Zicm"], ["created_at", "2020-02-11 21:35:27.799578"], ["updated_at", "2020-02-11 21:35:27.799578"], ["name", "erne"]]
+  ↳ /home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 159ms (ActiveRecord: 3.6ms)
+
+
+Started GET "/" for ::1 at 2020-02-11 15:35:27 -0600
+Processing by PagesController#feed as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ /home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mFriendship Load (0.9ms)[0m  [1m[34mSELECT "friendships".* FROM "friendships" WHERE "friendships"."user_id" = $1[0m  [["user_id", 18]]
+  ↳ app/controllers/pages_controller.rb:4
+  [1m[36mFriendship Load (1.5ms)[0m  [1m[34mSELECT "friendships".* FROM "friendships" WHERE "friendships"."friend_id" = $1[0m  [["friend_id", 18]]
+  ↳ app/controllers/pages_controller.rb:5
+  Rendering pages/feed.html.erb within layouts/application
+  Rendered posts/_form.html.erb (4.2ms)
+  [1m[36mPost Load (1.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE (user_id IN (18)) ORDER BY "posts"."created_at" DESC[0m
+  ↳ app/views/pages/feed.html.erb:6
+  Rendered pages/feed.html.erb within layouts/application (9.4ms)
+  Rendered layouts/_navbar.html.erb (1.8ms)
+Completed 200 OK in 71ms (Views: 57.3ms | ActiveRecord: 4.6ms)
+
+
+Started GET "/" for ::1 at 2020-02-11 15:37:28 -0600
+  
+SyntaxError (/home/mkezmkez/projects/social-network/app/models/user.rb:8: syntax error, unexpected ',', expecting end
+  :recoverable, :rememberable, :validatable,...
+              ^):
+  
+app/models/user.rb:8: syntax error, unexpected ',', expecting end
+config/routes.rb:8:in `block in <main>'
+config/routes.rb:1:in `<main>'
+Started GET "/" for ::1 at 2020-02-11 15:37:37 -0600
+Processing by PagesController#feed as HTML
+Completed 401 Unauthorized in 4ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-02-11 15:37:37 -0600
+Processing by Devise::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (1.0ms)
+  Rendered users/sessions/new.html.erb within layouts/application (3.4ms)
+  Rendered layouts/_navbar.html.erb (1.1ms)
+Completed 200 OK in 86ms (Views: 45.3ms | ActiveRecord: 7.1ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-02-11 15:37:40 -0600
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (1.3ms)
+  Rendered devise/shared/_links.html.erb (3.0ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (15.5ms)
+  Rendered layouts/_navbar.html.erb (1.8ms)
+Completed 200 OK in 68ms (Views: 66.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2020-02-11 15:37:55 -0600
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OXvpzAabdB0yBsmuhbuAnITOiEm/dWlzGjggWBNwPhN+RVDI6ZEvarIQmPx5IUMWNUBKZ2yYsY5BDOqCKmzdsA==", "user"=>{"email"=>"mike.fari+www@gmail.com", "name"=>"alison", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+Unpermitted parameter: :password_confirmation
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "mike.fari+www@gmail.com"], ["LIMIT", 1]]
+  ↳ /home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Create (1.1ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "name", "confirmation_token", "confirmation_sent_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["email", "mike.fari+www@gmail.com"], ["encrypted_password", "$2a$11$axX6vlEArDO6ut6YraXND.rHLjKVo/YD6JEft0URM4zIzKcYPK2ra"], ["created_at", "2020-02-11 21:37:55.631217"], ["updated_at", "2020-02-11 21:37:55.631217"], ["name", "alison"], ["confirmation_token", "t-vVGojHrw6nacvszKMd"], ["confirmation_sent_at", "2020-02-11 21:37:55.631374"]]
+  ↳ /home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (4.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  Rendering users/mailer/confirmation_instructions.html.erb
+  Rendered users/mailer/confirmation_instructions.html.erb (0.7ms)
+Devise::Mailer#confirmation_instructions: processed outbound mail in 10.5ms
+Sent mail to mike.fari+www@gmail.com (1437.1ms)
+Date: Tue, 11 Feb 2020 15:37:55 -0600
+From: please-change-me-at-config-initializers-devise@example.com
+Reply-To: please-change-me-at-config-initializers-devise@example.com
+To: mike.fari+www@gmail.com
+Message-ID: <5e431eb3a0e19_72312b050637bde8141a3@mkezmkez-Inspiron-3576.mail>
+Subject: Confirmation instructions
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>Welcome mike.fari+www@gmail.com!</p>
+
+<p>You can confirm your account email through the link below:</p>
+
+<p><a href="http://localhost:3000/users/confirmation?confirmation_token=t-vVGojHrw6nacvszKMd">Confirm my account</a></p>
+
+Redirected to http://localhost:3000/
+Completed 302 Found in 1607ms (ActiveRecord: 6.5ms)
+
+
+Started GET "/" for ::1 at 2020-02-11 15:37:57 -0600
+Processing by PagesController#feed as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-02-11 15:37:57 -0600
+Processing by Devise::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (0.9ms)
+  Rendered users/sessions/new.html.erb within layouts/application (4.3ms)
+  Rendered layouts/_navbar.html.erb (1.3ms)
+Completed 200 OK in 47ms (Views: 44.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-02-11 15:39:29 -0600
+Processing by Devise::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (2.2ms)
+  Rendered users/sessions/new.html.erb within layouts/application (8.2ms)
+  Rendered layouts/_navbar.html.erb (1.2ms)
+Completed 200 OK in 72ms (Views: 50.3ms | ActiveRecord: 4.5ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-02-11 15:39:32 -0600
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (1.1ms)
+  Rendered devise/shared/_links.html.erb (2.5ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (9.2ms)
+  Rendered layouts/_navbar.html.erb (0.9ms)
+Completed 200 OK in 59ms (Views: 57.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2020-02-11 15:39:50 -0600
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"F1oPBaZYQTRr0J+1t+tj5IAea3W3MXDdVmVHUPBwz+1QZLYBSVIaQ+vGzudLcaBuMZCpW2TcqCANUY2KyWwsTg==", "user"=>{"email"=>"mike.fari+888@gmail.com", "name"=>"abcde", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+Unpermitted parameter: :password_confirmation
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "mike.fari+888@gmail.com"], ["LIMIT", 1]]
+  ↳ /home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ /home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (1.2ms)
+  Rendered devise/shared/_links.html.erb (1.9ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (8.7ms)
+  Rendered layouts/_navbar.html.erb (1.0ms)
+Completed 200 OK in 184ms (Views: 44.2ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/users" for ::1 at 2020-02-11 15:40:01 -0600
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"H2zWQvm/9jZG+q9hCiLlVO+0jb0U33pupyq3E8rVHHlsHvrZEdmiLbcraGhmpBmRUEugfqUPvbiiztJgXtusow==", "user"=>{"email"=>"mike.fari+w888@gmail.com", "name"=>"abcde", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+Unpermitted parameter: :password_confirmation
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "mike.fari+w888@gmail.com"], ["LIMIT", 1]]
+  ↳ /home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "name") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["email", "mike.fari+w888@gmail.com"], ["encrypted_password", "$2a$11$iVwWLfhTaUPZQfnyy3urzenYwhAnrsPTMGXNhpMK66nTvxg34Eh3O"], ["created_at", "2020-02-11 21:40:01.739188"], ["updated_at", "2020-02-11 21:40:01.739188"], ["name", "abcde"]]
+  ↳ /home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 158ms (ActiveRecord: 3.2ms)
+
+
+Started GET "/" for ::1 at 2020-02-11 15:40:01 -0600
+Processing by PagesController#feed as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ /home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mFriendship Load (0.7ms)[0m  [1m[34mSELECT "friendships".* FROM "friendships" WHERE "friendships"."user_id" = $1[0m  [["user_id", 20]]
+  ↳ app/controllers/pages_controller.rb:4
+  [1m[36mFriendship Load (1.5ms)[0m  [1m[34mSELECT "friendships".* FROM "friendships" WHERE "friendships"."friend_id" = $1[0m  [["friend_id", 20]]
+  ↳ app/controllers/pages_controller.rb:5
+  Rendering pages/feed.html.erb within layouts/application
+  Rendered posts/_form.html.erb (1.8ms)
+  [1m[36mPost Load (1.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE (user_id IN (20)) ORDER BY "posts"."created_at" DESC[0m
+  ↳ app/views/pages/feed.html.erb:6
+  Rendered pages/feed.html.erb within layouts/application (6.6ms)
+  Rendered layouts/_navbar.html.erb (1.4ms)
+Completed 200 OK in 107ms (Views: 70.2ms | ActiveRecord: 15.7ms)
+
+
+Started GET "/" for ::1 at 2020-02-11 15:46:18 -0600
+Processing by PagesController#feed as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ /home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mFriendship Load (0.5ms)[0m  [1m[34mSELECT "friendships".* FROM "friendships" WHERE "friendships"."user_id" = $1[0m  [["user_id", 18]]
+  ↳ app/controllers/pages_controller.rb:4
+  [1m[36mFriendship Load (0.3ms)[0m  [1m[34mSELECT "friendships".* FROM "friendships" WHERE "friendships"."friend_id" = $1[0m  [["friend_id", 18]]
+  ↳ app/controllers/pages_controller.rb:5
+  Rendering pages/feed.html.erb within layouts/application
+  Rendered posts/_form.html.erb (2.6ms)
+  [1m[36mPost Load (1.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE (user_id IN (18)) ORDER BY "posts"."created_at" DESC[0m
+  ↳ app/views/pages/feed.html.erb:6
+  Rendered pages/feed.html.erb within layouts/application (6.6ms)
+  Rendered layouts/_navbar.html.erb (1.1ms)
+Completed 200 OK in 140ms (Views: 57.9ms | ActiveRecord: 18.8ms)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2020-02-11 15:49:38 -0600
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"T/mzoGoMhZPUJPDphv+czv+/aItFlkqzDCO1wCN/qwY8i587gmrRiCX1N+DqeWALQEBFSPRGjWUJx9Czt3Eb3A=="}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ /home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 35ms (ActiveRecord: 8.8ms)
+
+
+Started GET "/" for ::1 at 2020-02-11 15:49:38 -0600
+Processing by PagesController#feed as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-02-11 15:49:38 -0600
+Processing by Devise::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (1.0ms)
+  Rendered users/sessions/new.html.erb within layouts/application (4.3ms)
+  Rendered layouts/_navbar.html.erb (1.2ms)
+Completed 200 OK in 83ms (Views: 81.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-02-11 15:49:48 -0600
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (1.4ms)
+  Rendered devise/shared/_links.html.erb (2.3ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (14.0ms)
+  Rendered layouts/_navbar.html.erb (2.4ms)
+Completed 200 OK in 90ms (Views: 86.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2020-02-11 15:50:02 -0600
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Mt46Jtv+uCeccLg8otX4fN6qcOpJTFKqC1rPTkMb4W0JmSoj6GAl/gM+CCHW/PUQ5jaB/lECnoG22XILXyhqWg==", "user"=>{"email"=>"mike.fari+qwe@gmail.com", "name"=>"carlos2", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+Unpermitted parameter: :password_confirmation
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "mike.fari+qwe@gmail.com"], ["LIMIT", 1]]
+  ↳ /home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "name") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["email", "mike.fari+qwe@gmail.com"], ["encrypted_password", "$2a$11$RYuFFvEugUuN4bBoLxoak.7KyogpKEE7ACGdlRollp9fIeTmpZTcm"], ["created_at", "2020-02-11 21:50:03.088353"], ["updated_at", "2020-02-11 21:50:03.088353"], ["name", "carlos2"]]
+  ↳ /home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  ↳ /home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Completed 500 Internal Server Error in 187ms (ActiveRecord: 2.3ms)
+
+
+  
+NoMethodError (undefined method `welcome_send' for UserMailer:Class):
+  
+app/models/user.rb:36:in `welcome_send'
+Started POST "/users" for ::1 at 2020-02-11 15:50:45 -0600
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Mt46Jtv+uCeccLg8otX4fN6qcOpJTFKqC1rPTkMb4W0JmSoj6GAl/gM+CCHW/PUQ5jaB/lECnoG22XILXyhqWg==", "user"=>{"email"=>"mike.fari+qwe@gmail.com", "name"=>"carlos2", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+Unpermitted parameter: :password_confirmation
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Exists (1.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "mike.fari+qwe@gmail.com"], ["LIMIT", 1]]
+  ↳ /home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "name") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["email", "mike.fari+qwe@gmail.com"], ["encrypted_password", "$2a$11$cle5cpzfOadZgJT41aoisegowyaqkJDBatC/M5sarUDG4gCfI4jOa"], ["created_at", "2020-02-11 21:50:45.572495"], ["updated_at", "2020-02-11 21:50:45.572495"], ["name", "carlos2"]]
+  ↳ /home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+UserMailer#welcome_email: processed outbound mail in 0.5ms
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ /home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Completed 500 Internal Server Error in 200ms (ActiveRecord: 9.8ms)
+
+
+  
+ArgumentError (wrong number of arguments (given 1, expected 0)):
+  
+app/mailers/user_mailer.rb:5:in `welcome_email'
+app/models/user.rb:36:in `welcome_send'
+Started POST "/users" for ::1 at 2020-02-11 15:51:00 -0600
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Mt46Jtv+uCeccLg8otX4fN6qcOpJTFKqC1rPTkMb4W0JmSoj6GAl/gM+CCHW/PUQ5jaB/lECnoG22XILXyhqWg==", "user"=>{"email"=>"mike.fari+qwe@gmail.com", "name"=>"carlos2", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+Unpermitted parameter: :password_confirmation
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "mike.fari+qwe@gmail.com"], ["LIMIT", 1]]
+  ↳ /home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "name") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["email", "mike.fari+qwe@gmail.com"], ["encrypted_password", "$2a$11$NHFbOqSkttM3yVDQ9kCp0.chxM3k50Kr8kyQnOUlrnKQPU2kEBDMG"], ["created_at", "2020-02-11 21:51:00.551945"], ["updated_at", "2020-02-11 21:51:00.551945"], ["name", "carlos2"]]
+  ↳ /home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+UserMailer#welcome_email: processed outbound mail in 0.8ms
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ /home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Completed 500 Internal Server Error in 252ms (ActiveRecord: 10.7ms)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/mailers/user_mailer.rb:6:in `welcome_email'
+app/models/user.rb:36:in `welcome_send'
+Started POST "/users" for ::1 at 2020-02-11 15:51:14 -0600
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Mt46Jtv+uCeccLg8otX4fN6qcOpJTFKqC1rPTkMb4W0JmSoj6GAl/gM+CCHW/PUQ5jaB/lECnoG22XILXyhqWg==", "user"=>{"email"=>"mike.fari+qwe@gmail.com", "name"=>"carlos2", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+Unpermitted parameter: :password_confirmation
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "mike.fari+qwe@gmail.com"], ["LIMIT", 1]]
+  ↳ /home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "name") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["email", "mike.fari+qwe@gmail.com"], ["encrypted_password", "$2a$11$J/BnRdzAmGfDg5U6Y4pXu.pHNCXEupc1vcYXOW0LPTvxSqdQni.1y"], ["created_at", "2020-02-11 21:51:15.238363"], ["updated_at", "2020-02-11 21:51:15.238363"], ["name", "carlos2"]]
+  ↳ /home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+UserMailer#welcome_email: processed outbound mail in 1.4ms
+  [1m[35m (1.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ /home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Completed 500 Internal Server Error in 214ms (ActiveRecord: 10.1ms)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/mailers/user_mailer.rb:6:in `welcome_email'
+app/models/user.rb:36:in `welcome_send'
+Started POST "/users" for ::1 at 2020-02-11 15:51:42 -0600
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"LXQm75ADc4XcBVmeH0CKoYfuY/kjmPjRXExj8OUWGKV1NhDKWgvKRjQ7ERldelmiMPjsfH5T+s3nJuoKPsbEcw==", "user"=>{"email"=>"mike.fari+qwee@gmail.com", "name"=>"carlos2", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+Unpermitted parameter: :password_confirmation
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "mike.fari+qwee@gmail.com"], ["LIMIT", 1]]
+  ↳ /home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Create (1.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "name") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["email", "mike.fari+qwee@gmail.com"], ["encrypted_password", "$2a$11$oXSEVTfdM26GjH47x4FgPeLlZ6whtqTtozjkAKePybVs9LU.avxiW"], ["created_at", "2020-02-11 21:51:42.235229"], ["updated_at", "2020-02-11 21:51:42.235229"], ["name", "carlos2"]]
+  ↳ /home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+UserMailer#welcome_email: processed outbound mail in 4.4ms
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  ↳ /home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Completed 500 Internal Server Error in 202ms (ActiveRecord: 2.6ms)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/mailers/user_mailer.rb:6:in `welcome_email'
+app/models/user.rb:36:in `welcome_send'
+Started POST "/users" for ::1 at 2020-02-11 15:55:19 -0600
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"LXQm75ADc4XcBVmeH0CKoYfuY/kjmPjRXExj8OUWGKV1NhDKWgvKRjQ7ERldelmiMPjsfH5T+s3nJuoKPsbEcw==", "user"=>{"email"=>"mike.fari+qwee@gmail.com", "name"=>"carlos2", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+Unpermitted parameter: :password_confirmation
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Exists (1.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "mike.fari+qwee@gmail.com"], ["LIMIT", 1]]
+  ↳ /home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "name") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["email", "mike.fari+qwee@gmail.com"], ["encrypted_password", "$2a$11$KlRvy5gk7KyeO3lhSum3SOG7hZ3a7ZcfvHzec9gMIsETg5nDu6oi."], ["created_at", "2020-02-11 21:55:20.059282"], ["updated_at", "2020-02-11 21:55:20.059282"], ["name", "carlos2"]]
+  ↳ /home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  Rendering user_mailer/welcome_email.html.erb within layouts/mailer
+  Rendered user_mailer/welcome_email.html.erb within layouts/mailer (2.3ms)
+UserMailer#welcome_email: processed outbound mail in 11.5ms
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ /home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Completed 500 Internal Server Error in 228ms (ActiveRecord: 10.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    4:     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+    5:   </head>
+    6:   <body>
+    7:     <h1>Welcome to meme.com, <%= @user.name %></h1>
+    8:     <p>
+    9:       You have successfully signed up to meme.com,
+   10:     </p>
+  
+app/views/user_mailer/welcome_email.html.erb:7:in `_app_views_user_mailer_welcome_email_html_erb___3297479282529615792_70157191515160'
+app/mailers/user_mailer.rb:8:in `welcome_email'
+app/models/user.rb:36:in `welcome_send'
+Started POST "/users" for ::1 at 2020-02-11 15:55:40 -0600
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"LXQm75ADc4XcBVmeH0CKoYfuY/kjmPjRXExj8OUWGKV1NhDKWgvKRjQ7ERldelmiMPjsfH5T+s3nJuoKPsbEcw==", "user"=>{"email"=>"mike.fari+qwee@gmail.com", "name"=>"carlos2", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+Unpermitted parameter: :password_confirmation
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "mike.fari+qwee@gmail.com"], ["LIMIT", 1]]
+  ↳ /home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "name") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["email", "mike.fari+qwee@gmail.com"], ["encrypted_password", "$2a$11$a4HIIX2wZem8.U8TjiXrrOgKtD3rO1JuzqftToT1RYRVr/msPTI7y"], ["created_at", "2020-02-11 21:55:40.983166"], ["updated_at", "2020-02-11 21:55:40.983166"], ["name", "carlos2"]]
+  ↳ /home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  Rendering user_mailer/welcome_email.html.erb within layouts/mailer
+  Rendered user_mailer/welcome_email.html.erb within layouts/mailer (0.5ms)
+  Rendering user_mailer/welcome_email.text.erb within layouts/mailer
+  Rendered user_mailer/welcome_email.text.erb within layouts/mailer (0.6ms)
+UserMailer#welcome_email: processed outbound mail in 20.6ms
+Sent mail to mike.fari+qwee@gmail.com (1583.0ms)
+Date: Tue, 11 Feb 2020 15:55:41 -0600
+From: welcome@memes.com
+To: mike.fari+qwee@gmail.com
+Message-ID: <5e4322dd6f42_72312b050637b98814382@mkezmkez-Inspiron-3576.mail>
+Subject: Welcome to memeland
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_5e4322dd4b12_72312b050637b988142ce";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_5e4322dd4b12_72312b050637b988142ce
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+Welcome to example.com, carlos2
+===============================================
+ 
+You have successfully signed up to example.com,
+ 
+To login to the site, just follow this link: http://localhost:3000.
+ 
+Thanks for joining and have a great day!
+
+----==_mimepart_5e4322dd4b12_72312b050637b988142ce
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Welcome to meme.com, carlos2</h1>
+    <p>
+      You have successfully signed up to meme.com,
+    </p>
+    <p>
+      To login to the site, just follow this link: http://localhost:3000.
+    </p>
+    <p>Thanks for joining and have a great day!</p>
+  </body>
+</html>
+  </body>
+</html>
+
+----==_mimepart_5e4322dd4b12_72312b050637b988142ce--
+
+  [1m[35m (1.6ms)[0m  [1m[31mROLLBACK[0m
+  ↳ /home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Completed 500 Internal Server Error in 1864ms (ActiveRecord: 8.1ms)
+
+
+  
+NameError (undefined local variable or method `root_path' for #<User:0x00007f9d60064c80>):
+  
+app/models/user.rb:37:in `welcome_send'
+Started POST "/users" for ::1 at 2020-02-11 15:56:01 -0600
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"LXQm75ADc4XcBVmeH0CKoYfuY/kjmPjRXExj8OUWGKV1NhDKWgvKRjQ7ERldelmiMPjsfH5T+s3nJuoKPsbEcw==", "user"=>{"email"=>"mike.fari+qwee@gmail.com", "name"=>"carlos2", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+Unpermitted parameter: :password_confirmation
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "mike.fari+qwee@gmail.com"], ["LIMIT", 1]]
+  ↳ /home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "name") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["email", "mike.fari+qwee@gmail.com"], ["encrypted_password", "$2a$11$aj0f8L80lLZlHQqEMTikc.Y1FiSo9WoWkXP7hlOZrfW7SY42ZAtqC"], ["created_at", "2020-02-11 21:56:01.939730"], ["updated_at", "2020-02-11 21:56:01.939730"], ["name", "carlos2"]]
+  ↳ /home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  Rendering user_mailer/welcome_email.html.erb within layouts/mailer
+  Rendered user_mailer/welcome_email.html.erb within layouts/mailer (0.5ms)
+  Rendering user_mailer/welcome_email.text.erb within layouts/mailer
+  Rendered user_mailer/welcome_email.text.erb within layouts/mailer (0.6ms)
+UserMailer#welcome_email: processed outbound mail in 11.6ms
+Sent mail to mike.fari+qwee@gmail.com (1116.4ms)
+Date: Tue, 11 Feb 2020 15:56:01 -0600
+From: welcome@memes.com
+To: mike.fari+qwee@gmail.com
+Message-ID: <5e4322f1ed972_72312b050637bba4145f7@mkezmkez-Inspiron-3576.mail>
+Subject: Welcome to memeland
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_5e4322f1ec959_72312b050637bba41441";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_5e4322f1ec959_72312b050637bba41441
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+Welcome to example.com, carlos2
+===============================================
+ 
+You have successfully signed up to example.com,
+ 
+To login to the site, just follow this link: http://localhost:3000.
+ 
+Thanks for joining and have a great day!
+
+----==_mimepart_5e4322f1ec959_72312b050637bba41441
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Welcome to meme.com, carlos2</h1>
+    <p>
+      You have successfully signed up to meme.com,
+    </p>
+    <p>
+      To login to the site, just follow this link: http://localhost:3000.
+    </p>
+    <p>Thanks for joining and have a great day!</p>
+  </body>
+</html>
+  </body>
+</html>
+
+----==_mimepart_5e4322f1ec959_72312b050637bba41441--
+
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 1343ms (ActiveRecord: 11.8ms)
+
+
+Started GET "/" for ::1 at 2020-02-11 15:56:03 -0600
+Processing by PagesController#feed as HTML
+  [1m[36mUser Load (4.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ /home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mFriendship Load (0.4ms)[0m  [1m[34mSELECT "friendships".* FROM "friendships" WHERE "friendships"."user_id" = $1[0m  [["user_id", 28]]
+  ↳ app/controllers/pages_controller.rb:4
+  [1m[36mFriendship Load (0.4ms)[0m  [1m[34mSELECT "friendships".* FROM "friendships" WHERE "friendships"."friend_id" = $1[0m  [["friend_id", 28]]
+  ↳ app/controllers/pages_controller.rb:5
+  Rendering pages/feed.html.erb within layouts/application
+  Rendered posts/_form.html.erb (6.1ms)
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE (user_id IN (28)) ORDER BY "posts"."created_at" DESC[0m
+  ↳ app/views/pages/feed.html.erb:6
+  Rendered pages/feed.html.erb within layouts/application (10.8ms)
+  Rendered layouts/_navbar.html.erb (3.8ms)
+Completed 200 OK in 115ms (Views: 65.2ms | ActiveRecord: 15.1ms)
+
+
