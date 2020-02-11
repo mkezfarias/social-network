@@ -46,6 +46,7 @@ group :development, :test do
   gem 'rails-controller-testing'
   gem 'rspec-rails'
   gem 'spring'
+  gem 'letter_opener'
 end
 
 group :development do

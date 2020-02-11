@@ -1,5 +1,9 @@
 <%= link_to user_path(post.user) do %>
-  <%= gravatar_for post.user %>
+  <% if post.user.img_url %>
+    <%= image_tag(post.user.img_url) %>
+  <% else %>
+    <%= gravatar_for post.user %>
+  <% end %>
 <% end %>
 <span><%= post.user.name %></span>
  <div class="card post">
