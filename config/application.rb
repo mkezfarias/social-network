@@ -9,7 +9,7 @@ Bundler.require(*Rails.groups)
 module SocialNetwork
   class Application < Rails::Application
     config.load_defaults 5.2
-
+    config.action_controller.permit_all_parameters = false
     config.generators do |g|
       g.test_framework :rspec,
         :fixtures => false,

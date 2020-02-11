@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :post do
-    content { 'MyText' }
+    content {Faker::Lorem.paragraph(sentence_count: 2)}
     user { nil }
-    image { 'MyString' }
+    image { 'google.com' }
   end
 end
