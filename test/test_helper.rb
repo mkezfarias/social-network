@@ -11,6 +11,6 @@ class ActiveSupport::TestCase
   OmniAuth.config.mock_auth[:facebook] = nil
   OmniAuth.config.mock_auth[:facebook] = OmniAuth::AuthHash.new({
   :provider => 'facebook',
-  :uid => '318894785733393'
-  # etc.
+  :uid => ENV['APP_ID']
+  
 end
