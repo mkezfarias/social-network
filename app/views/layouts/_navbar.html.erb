@@ -35,6 +35,8 @@
       <li class="nav-item px-3 text-nowrap">
        <%= link_to "> friend requests ( #{current_user.inverse_friendships.select{ |friendship| friendship.confirmed.nil? }.count if current_user} )", friends_path, class: "d-inline nav-link text-white" %> 
       </li>
+      
+    
       <li class="nav-item px-5 text-nowrap">
       <%= link_to "> Log out", destroy_user_session_path, method: :delete, class: "nav-item text-light" %>
       </li>
