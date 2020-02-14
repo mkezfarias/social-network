@@ -15,6 +15,12 @@ feature 'create a new user' do
     click_on 'Sign up'
     expect(page).to have_content('Welcome!')
   end
+
+  scenario 'new user from facebook signup' do
+    click_on 'Log in with Facebook'
+    OmniAuth.config.add_mock(:facebook, uid: '12345')
+    expect(page).to have_content('Successfully authenticated from Facebook account.')
+  end
 end
 
 feature 'signout user' do

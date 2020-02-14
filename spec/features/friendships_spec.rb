@@ -29,8 +29,7 @@ feature 'accept friendship' do
     visit root_path
     create_user_and_log_in
     click_on '> Log out'
-    click_on 'Log in with Facebook'
-    OmniAuth.config.add_mock(:facebook, uid: '12345')
+    create_second_user_and_log_in
     visit users_path
     click_on 'Add to friends'
     click_on '> Log out'
