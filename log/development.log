@@ -37914,3 +37914,374 @@ Completed 200 OK in 115ms (Views: 65.2ms | ActiveRecord: 15.1ms)
   [1m[36mFriendship Load (0.4ms)[0m  [1m[34mSELECT  "friendships".* FROM "friendships" WHERE "friendships"."user_id" = $1 LIMIT $2[0m  [["user_id", 8], ["LIMIT", 11]]
   [1m[36mFriendship Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "friendships" WHERE "friendships"."user_id" = $1 AND "friendships"."friend_id" = $2 LIMIT $3[0m  [["user_id", 8], ["friend_id", 7], ["LIMIT", 1]]
   [1m[36mFriendship Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "friendships" WHERE "friendships"."user_id" = $1 AND "friendships"."friend_id" = $2 LIMIT $3[0m  [["user_id", 8], ["friend_id", 7], ["LIMIT", 1]]
+Started GET "/" for ::1 at 2020-02-13 16:26:36 -0600
+  [1m[35m (4.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by PagesController#feed as HTML
+  [1m[36mUser Load (3.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ /home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mFriendship Load (0.8ms)[0m  [1m[34mSELECT "friendships".* FROM "friendships" WHERE "friendships"."user_id" = $1[0m  [["user_id", 6]]
+  ↳ app/controllers/pages_controller.rb:4
+  [1m[36mFriendship Load (0.7ms)[0m  [1m[34mSELECT "friendships".* FROM "friendships" WHERE "friendships"."friend_id" = $1[0m  [["friend_id", 6]]
+  ↳ app/controllers/pages_controller.rb:5
+  Rendering pages/feed.html.erb within layouts/application
+  Rendered posts/_form.html.erb (17.4ms)
+  [1m[36mPost Load (3.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE (user_id IN (6)) ORDER BY "posts"."created_at" DESC[0m
+  ↳ app/views/pages/feed.html.erb:6
+  [1m[36mUser Load (3.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:1
+  Rendered posts/_post.html.erb (21.7ms)
+  Rendered pages/feed.html.erb within layouts/application (51.2ms)
+Completed 500 Internal Server Error in 201ms (ActiveRecord: 31.6ms)
+
+
+  
+ActionView::Template::Error (undefined method `img' for #<Post:0x00005633fde7e398>
+Did you mean?  image):
+     8: <span><%= post.user.name %></span>
+     9:  <div class="card post">
+    10:      <%= link_to post_path(post.id) do %>
+    11:      <%= image_tag(post.img, class: "card-img-top") %>
+    12:      <% end %>
+    13:      <div class="card-body">
+    14:      <div class= "card-text"><%= post.content  %> </div>
+  
+app/views/posts/_post.html.erb:11:in `block in _app_views_posts__post_html_erb__1005721112121013541_47390651573860'
+app/views/posts/_post.html.erb:10:in `_app_views_posts__post_html_erb__1005721112121013541_47390651573860'
+app/views/pages/feed.html.erb:7:in `block in _app_views_pages_feed_html_erb___1426270295832231844_47390651358180'
+app/views/pages/feed.html.erb:6:in `_app_views_pages_feed_html_erb___1426270295832231844_47390651358180'
+Started GET "/" for ::1 at 2020-02-13 16:26:56 -0600
+Processing by PagesController#feed as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ /home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mFriendship Load (0.4ms)[0m  [1m[34mSELECT "friendships".* FROM "friendships" WHERE "friendships"."user_id" = $1[0m  [["user_id", 6]]
+  ↳ app/controllers/pages_controller.rb:4
+  [1m[36mFriendship Load (0.6ms)[0m  [1m[34mSELECT "friendships".* FROM "friendships" WHERE "friendships"."friend_id" = $1[0m  [["friend_id", 6]]
+  ↳ app/controllers/pages_controller.rb:5
+  Rendering pages/feed.html.erb within layouts/application
+  Rendered posts/_form.html.erb (4.1ms)
+  [1m[36mPost Load (2.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE (user_id IN (6)) ORDER BY "posts"."created_at" DESC[0m
+  ↳ app/views/pages/feed.html.erb:6
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:1
+  [1m[36mLike Load (2.4ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."likeable_id" = $1 AND "likes"."likeable_type" = $2[0m  [["likeable_id", 12], ["likeable_type", "Post"]]
+  ↳ app/views/posts/_post.html.erb:15
+  [1m[36mLike Load (0.4ms)[0m  [1m[34mSELECT  "likes".* FROM "likes" WHERE "likes"."likeable_id" = $1 AND "likes"."likeable_type" = $2 AND "likes"."user_id" = $3 ORDER BY "likes"."id" ASC LIMIT $4[0m  [["likeable_id", 12], ["likeable_type", "Post"], ["user_id", 6], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:16
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."likeable_id" = $1 AND "likes"."likeable_type" = $2[0m  [["likeable_id", 12], ["likeable_type", "Post"]]
+  ↳ app/views/posts/_post.html.erb:21
+  Rendered posts/_post.html.erb (67.3ms)
+  [1m[36mComment Load (3.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 12]]
+  ↳ app/views/pages/feed.html.erb:9
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/pages/feed.html.erb:11
+  [1m[36mLike Load (1.2ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."likeable_id" = $1 AND "likes"."likeable_type" = $2[0m  [["likeable_id", 16], ["likeable_type", "Comment"]]
+  ↳ app/views/pages/feed.html.erb:13
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."likeable_id" = $1 AND "likes"."likeable_type" = $2[0m  [["likeable_id", 16], ["likeable_type", "Comment"]]
+  ↳ app/views/pages/feed.html.erb:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:1
+  [1m[36mLike Load (0.6ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."likeable_id" = $1 AND "likes"."likeable_type" = $2[0m  [["likeable_id", 7], ["likeable_type", "Post"]]
+  ↳ app/views/posts/_post.html.erb:15
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."likeable_id" = $1 AND "likes"."likeable_type" = $2[0m  [["likeable_id", 7], ["likeable_type", "Post"]]
+  ↳ app/views/posts/_post.html.erb:21
+  Rendered posts/_post.html.erb (5.3ms)
+  [1m[36mComment Load (0.6ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 7]]
+  ↳ app/views/pages/feed.html.erb:9
+  Rendered pages/feed.html.erb within layouts/application (141.3ms)
+  Rendered layouts/_navbar.html.erb (1.1ms)
+Completed 200 OK in 529ms (Views: 496.1ms | ActiveRecord: 24.5ms)
+
+
+Started GET "/" for ::1 at 2020-02-13 16:27:13 -0600
+Processing by PagesController#feed as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ /home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mFriendship Load (0.7ms)[0m  [1m[34mSELECT "friendships".* FROM "friendships" WHERE "friendships"."user_id" = $1[0m  [["user_id", 6]]
+  ↳ app/controllers/pages_controller.rb:4
+  [1m[36mFriendship Load (0.4ms)[0m  [1m[34mSELECT "friendships".* FROM "friendships" WHERE "friendships"."friend_id" = $1[0m  [["friend_id", 6]]
+  ↳ app/controllers/pages_controller.rb:5
+  Rendering pages/feed.html.erb within layouts/application
+  Rendered posts/_form.html.erb (2.2ms)
+  [1m[36mPost Load (4.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE (user_id IN (6)) ORDER BY "posts"."created_at" DESC[0m
+  ↳ app/views/pages/feed.html.erb:6
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:1
+  [1m[36mLike Load (0.6ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."likeable_id" = $1 AND "likes"."likeable_type" = $2[0m  [["likeable_id", 12], ["likeable_type", "Post"]]
+  ↳ app/views/posts/_post.html.erb:15
+  [1m[36mLike Load (0.7ms)[0m  [1m[34mSELECT  "likes".* FROM "likes" WHERE "likes"."likeable_id" = $1 AND "likes"."likeable_type" = $2 AND "likes"."user_id" = $3 ORDER BY "likes"."id" ASC LIMIT $4[0m  [["likeable_id", 12], ["likeable_type", "Post"], ["user_id", 6], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:16
+  [1m[35m (3.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."likeable_id" = $1 AND "likes"."likeable_type" = $2[0m  [["likeable_id", 12], ["likeable_type", "Post"]]
+  ↳ app/views/posts/_post.html.erb:21
+  Rendered posts/_post.html.erb (14.8ms)
+  [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 12]]
+  ↳ app/views/pages/feed.html.erb:9
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/pages/feed.html.erb:11
+  [1m[36mLike Load (0.4ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."likeable_id" = $1 AND "likes"."likeable_type" = $2[0m  [["likeable_id", 16], ["likeable_type", "Comment"]]
+  ↳ app/views/pages/feed.html.erb:13
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."likeable_id" = $1 AND "likes"."likeable_type" = $2[0m  [["likeable_id", 16], ["likeable_type", "Comment"]]
+  ↳ app/views/pages/feed.html.erb:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:1
+  [1m[36mLike Load (0.5ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."likeable_id" = $1 AND "likes"."likeable_type" = $2[0m  [["likeable_id", 7], ["likeable_type", "Post"]]
+  ↳ app/views/posts/_post.html.erb:15
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."likeable_id" = $1 AND "likes"."likeable_type" = $2[0m  [["likeable_id", 7], ["likeable_type", "Post"]]
+  ↳ app/views/posts/_post.html.erb:21
+  Rendered posts/_post.html.erb (10.3ms)
+  [1m[36mComment Load (0.8ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 7]]
+  ↳ app/views/pages/feed.html.erb:9
+  Rendered pages/feed.html.erb within layouts/application (59.6ms)
+  Rendered layouts/_navbar.html.erb (0.9ms)
+Completed 200 OK in 199ms (Views: 172.9ms | ActiveRecord: 16.4ms)
+
+
+Started POST "/posts" for ::1 at 2020-02-13 16:27:52 -0600
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UeSVMn/2WzR8soOZ9Y58ouLC2Mp5eMRV5LYgs0ctl/K//yc+jEBmIxW/7z7L2xzvStr7g8djZKz/p+gGN0Qbfg==", "post"=>{"content"=>"asfaasd", "image"=>"https://img-9gag-fun.9cache.com/photo/aqgdv5v_460swp.webp"}, "commit"=>"submit"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ /home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/posts_controller.rb:10
+  [1m[36mPost Create (4.1ms)[0m  [1m[32mINSERT INTO "posts" ("content", "user_id", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "asfaasd"], ["user_id", 6], ["image", "https://img-9gag-fun.9cache.com/photo/aqgdv5v_460swp.webp"], ["created_at", "2020-02-13 22:27:52.605572"], ["updated_at", "2020-02-13 22:27:52.605572"]]
+  ↳ app/controllers/posts_controller.rb:10
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/posts_controller.rb:10
+Redirected to http://localhost:3000/
+Completed 302 Found in 21ms (ActiveRecord: 7.4ms)
+
+
+Started GET "/" for ::1 at 2020-02-13 16:27:52 -0600
+Processing by PagesController#feed as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ /home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mFriendship Load (1.7ms)[0m  [1m[34mSELECT "friendships".* FROM "friendships" WHERE "friendships"."user_id" = $1[0m  [["user_id", 6]]
+  ↳ app/controllers/pages_controller.rb:4
+  [1m[36mFriendship Load (0.5ms)[0m  [1m[34mSELECT "friendships".* FROM "friendships" WHERE "friendships"."friend_id" = $1[0m  [["friend_id", 6]]
+  ↳ app/controllers/pages_controller.rb:5
+  Rendering pages/feed.html.erb within layouts/application
+  Rendered posts/_form.html.erb (2.5ms)
+  [1m[36mPost Load (4.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE (user_id IN (6)) ORDER BY "posts"."created_at" DESC[0m
+  ↳ app/views/pages/feed.html.erb:6
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:1
+  [1m[36mLike Load (0.5ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."likeable_id" = $1 AND "likes"."likeable_type" = $2[0m  [["likeable_id", 13], ["likeable_type", "Post"]]
+  ↳ app/views/posts/_post.html.erb:15
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."likeable_id" = $1 AND "likes"."likeable_type" = $2[0m  [["likeable_id", 13], ["likeable_type", "Post"]]
+  ↳ app/views/posts/_post.html.erb:21
+  Rendered posts/_post.html.erb (9.8ms)
+  [1m[36mComment Load (1.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 13]]
+  ↳ app/views/pages/feed.html.erb:9
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:1
+  [1m[36mLike Load (2.2ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."likeable_id" = $1 AND "likes"."likeable_type" = $2[0m  [["likeable_id", 12], ["likeable_type", "Post"]]
+  ↳ app/views/posts/_post.html.erb:15
+  [1m[36mLike Load (1.6ms)[0m  [1m[34mSELECT  "likes".* FROM "likes" WHERE "likes"."likeable_id" = $1 AND "likes"."likeable_type" = $2 AND "likes"."user_id" = $3 ORDER BY "likes"."id" ASC LIMIT $4[0m  [["likeable_id", 12], ["likeable_type", "Post"], ["user_id", 6], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:16
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."likeable_id" = $1 AND "likes"."likeable_type" = $2[0m  [["likeable_id", 12], ["likeable_type", "Post"]]
+  ↳ app/views/posts/_post.html.erb:21
+  Rendered posts/_post.html.erb (18.1ms)
+  [1m[36mComment Load (0.6ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 12]]
+  ↳ app/views/pages/feed.html.erb:9
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/pages/feed.html.erb:11
+  [1m[36mLike Load (1.2ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."likeable_id" = $1 AND "likes"."likeable_type" = $2[0m  [["likeable_id", 16], ["likeable_type", "Comment"]]
+  ↳ app/views/pages/feed.html.erb:13
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."likeable_id" = $1 AND "likes"."likeable_type" = $2[0m  [["likeable_id", 16], ["likeable_type", "Comment"]]
+  ↳ app/views/pages/feed.html.erb:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:1
+  [1m[36mLike Load (1.9ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."likeable_id" = $1 AND "likes"."likeable_type" = $2[0m  [["likeable_id", 7], ["likeable_type", "Post"]]
+  ↳ app/views/posts/_post.html.erb:15
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."likeable_id" = $1 AND "likes"."likeable_type" = $2[0m  [["likeable_id", 7], ["likeable_type", "Post"]]
+  ↳ app/views/posts/_post.html.erb:21
+  Rendered posts/_post.html.erb (11.6ms)
+  [1m[36mComment Load (0.7ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 7]]
+  ↳ app/views/pages/feed.html.erb:9
+  Rendered pages/feed.html.erb within layouts/application (81.6ms)
+  Rendered layouts/_navbar.html.erb (1.0ms)
+Completed 200 OK in 150ms (Views: 113.8ms | ActiveRecord: 23.7ms)
+
+
+Started GET "/posts/13" for ::1 at 2020-02-13 16:28:00 -0600
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ /home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:17
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:1
+  [1m[36mLike Load (0.3ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."likeable_id" = $1 AND "likes"."likeable_type" = $2[0m  [["likeable_id", 13], ["likeable_type", "Post"]]
+  ↳ app/views/posts/_post.html.erb:15
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."likeable_id" = $1 AND "likes"."likeable_type" = $2[0m  [["likeable_id", 13], ["likeable_type", "Post"]]
+  ↳ app/views/posts/_post.html.erb:21
+  Rendered posts/_post.html.erb (9.4ms)
+  [1m[36mComment Load (0.9ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 13]]
+  ↳ app/views/posts/show.html.erb:3
+  Rendered posts/show.html.erb within layouts/application (14.4ms)
+  [1m[36mFriendship Load (0.5ms)[0m  [1m[34mSELECT "friendships".* FROM "friendships" WHERE "friendships"."friend_id" = $1[0m  [["friend_id", 6]]
+  ↳ app/views/layouts/_navbar.html.erb:30
+  Rendered layouts/_navbar.html.erb (2.7ms)
+Completed 200 OK in 67ms (Views: 56.2ms | ActiveRecord: 5.1ms)
+
+
+Started GET "/" for ::1 at 2020-02-13 16:31:02 -0600
+Started GET "/" for ::1 at 2020-02-13 16:31:02 -0600
+Processing by PagesController#feed as HTML
+Processing by PagesController#feed as HTML
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ /home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mFriendship Load (3.2ms)[0m  [1m[34mSELECT "friendships".* FROM "friendships" WHERE "friendships"."user_id" = $1[0m  [["user_id", 6]]
+  ↳ app/controllers/pages_controller.rb:4
+  ↳ /home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mFriendship Load (2.2ms)[0m  [1m[34mSELECT "friendships".* FROM "friendships" WHERE "friendships"."friend_id" = $1[0m  [["friend_id", 6]]
+  ↳ app/controllers/pages_controller.rb:5
+  [1m[36mFriendship Load (1.7ms)[0m  [1m[34mSELECT "friendships".* FROM "friendships" WHERE "friendships"."user_id" = $1[0m  [["user_id", 6]]
+  ↳ app/controllers/pages_controller.rb:4
+  Rendering pages/feed.html.erb within layouts/application
+  [1m[36mFriendship Load (2.7ms)[0m  [1m[34mSELECT "friendships".* FROM "friendships" WHERE "friendships"."friend_id" = $1[0m  [["friend_id", 6]]
+  Rendered posts/_form.html.erb (3.9ms)
+  ↳ app/controllers/pages_controller.rb:5
+  [1m[36mPost Load (2.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE (user_id IN (6)) ORDER BY "posts"."created_at" DESC[0m
+  ↳ app/views/pages/feed.html.erb:6
+  Rendering pages/feed.html.erb within layouts/application
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:1
+  Rendered posts/_form.html.erb (3.4ms)
+  [1m[36mLike Load (0.8ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."likeable_id" = $1 AND "likes"."likeable_type" = $2[0m  [["likeable_id", 13], ["likeable_type", "Post"]]
+  ↳ app/views/posts/_post.html.erb:15
+  [1m[36mPost Load (2.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE (user_id IN (6)) ORDER BY "posts"."created_at" DESC[0m
+  ↳ app/views/pages/feed.html.erb:6
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."likeable_id" = $1 AND "likes"."likeable_type" = $2[0m  [["likeable_id", 13], ["likeable_type", "Post"]]
+  ↳ app/views/posts/_post.html.erb:21
+  Rendered posts/_post.html.erb (15.4ms)
+  [1m[36mComment Load (1.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 13]]
+  ↳ app/views/pages/feed.html.erb:9
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mUser Load (5.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:1
+  ↳ app/views/posts/_post.html.erb:1
+  [1m[36mLike Load (30.3ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."likeable_id" = $1 AND "likes"."likeable_type" = $2[0m  [["likeable_id", 12], ["likeable_type", "Post"]]
+  ↳ app/views/posts/_post.html.erb:15
+  [1m[36mLike Load (1.3ms)[0m  [1m[34mSELECT  "likes".* FROM "likes" WHERE "likes"."likeable_id" = $1 AND "likes"."likeable_type" = $2 AND "likes"."user_id" = $3 ORDER BY "likes"."id" ASC LIMIT $4[0m  [["likeable_id", 12], ["likeable_type", "Post"], ["user_id", 6], ["LIMIT", 1]]
+  [1m[36mLike Load (2.5ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."likeable_id" = $1 AND "likes"."likeable_type" = $2[0m  [["likeable_id", 13], ["likeable_type", "Post"]]
+  ↳ app/views/posts/_post.html.erb:16
+  ↳ app/views/posts/_post.html.erb:15
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."likeable_id" = $1 AND "likes"."likeable_type" = $2[0m  [["likeable_id", 12], ["likeable_type", "Post"]]
+  ↳ app/views/posts/_post.html.erb:21
+  Rendered posts/_post.html.erb (45.4ms)
+  [1m[35m (3.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."likeable_id" = $1 AND "likes"."likeable_type" = $2[0m  [["likeable_id", 13], ["likeable_type", "Post"]]
+  ↳ app/views/posts/_post.html.erb:21
+  [1m[36mComment Load (0.7ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 12]]
+  Rendered posts/_post.html.erb (55.8ms)
+  ↳ app/views/pages/feed.html.erb:9
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/pages/feed.html.erb:11
+  [1m[36mComment Load (2.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 13]]
+  [1m[36mLike Load (0.6ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."likeable_id" = $1 AND "likes"."likeable_type" = $2[0m  [["likeable_id", 16], ["likeable_type", "Comment"]]
+  ↳ app/views/pages/feed.html.erb:9
+  ↳ app/views/pages/feed.html.erb:13
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:1
+  [1m[35m (4.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."likeable_id" = $1 AND "likes"."likeable_type" = $2[0m  [["likeable_id", 16], ["likeable_type", "Comment"]]
+  ↳ app/views/pages/feed.html.erb:18
+  [1m[36mLike Load (1.3ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."likeable_id" = $1 AND "likes"."likeable_type" = $2[0m  [["likeable_id", 12], ["likeable_type", "Post"]]
+  ↳ app/views/posts/_post.html.erb:15
+  [1m[36mLike Load (0.6ms)[0m  [1m[34mSELECT  "likes".* FROM "likes" WHERE "likes"."likeable_id" = $1 AND "likes"."likeable_type" = $2 AND "likes"."user_id" = $3 ORDER BY "likes"."id" ASC LIMIT $4[0m  [["likeable_id", 12], ["likeable_type", "Post"], ["user_id", 6], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:16
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:1
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."likeable_id" = $1 AND "likes"."likeable_type" = $2[0m  [["likeable_id", 12], ["likeable_type", "Post"]]
+  ↳ app/views/posts/_post.html.erb:21
+  Rendered posts/_post.html.erb (19.4ms)
+  [1m[36mLike Load (0.9ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."likeable_id" = $1 AND "likes"."likeable_type" = $2[0m  [["likeable_id", 7], ["likeable_type", "Post"]]
+  ↳ app/views/posts/_post.html.erb:15
+  [1m[36mComment Load (1.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 12]]
+  ↳ app/views/pages/feed.html.erb:9
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."likeable_id" = $1 AND "likes"."likeable_type" = $2[0m  [["likeable_id", 7], ["likeable_type", "Post"]]
+  [1m[36mCACHE User Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:21
+  ↳ app/views/pages/feed.html.erb:11
+  Rendered posts/_post.html.erb (12.9ms)
+  [1m[36mComment Load (1.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 7]]
+  [1m[36mLike Load (3.1ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."likeable_id" = $1 AND "likes"."likeable_type" = $2[0m  [["likeable_id", 16], ["likeable_type", "Comment"]]
+  ↳ app/views/pages/feed.html.erb:13
+  ↳ app/views/pages/feed.html.erb:9
+  Rendered pages/feed.html.erb within layouts/application (137.0ms)
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."likeable_id" = $1 AND "likes"."likeable_type" = $2[0m  [["likeable_id", 16], ["likeable_type", "Comment"]]
+  ↳ app/views/pages/feed.html.erb:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:1
+  [1m[36mLike Load (4.4ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."likeable_id" = $1 AND "likes"."likeable_type" = $2[0m  [["likeable_id", 7], ["likeable_type", "Post"]]
+  ↳ app/views/posts/_post.html.erb:15
+  [1m[35m (8.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."likeable_id" = $1 AND "likes"."likeable_type" = $2[0m  [["likeable_id", 7], ["likeable_type", "Post"]]
+  ↳ app/views/posts/_post.html.erb:21
+  Rendered posts/_post.html.erb (19.4ms)
+  [1m[36mComment Load (0.6ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 7]]
+  ↳ app/views/pages/feed.html.erb:9
+  Rendered pages/feed.html.erb within layouts/application (151.7ms)
+  Rendered layouts/_navbar.html.erb (1.6ms)
+Completed 200 OK in 258ms (Views: 189.4ms | ActiveRecord: 56.5ms)
+
+
+  Rendered layouts/_navbar.html.erb (0.2ms)
+Completed 200 OK in 284ms (Views: 212.1ms | ActiveRecord: 47.4ms)
+
+
+Started GET "/" for ::1 at 2020-02-13 16:31:14 -0600
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by PagesController#feed as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ /home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mFriendship Load (1.6ms)[0m  [1m[34mSELECT "friendships".* FROM "friendships" WHERE "friendships"."user_id" = $1[0m  [["user_id", 6]]
+  ↳ app/controllers/pages_controller.rb:4
+  [1m[36mFriendship Load (0.4ms)[0m  [1m[34mSELECT "friendships".* FROM "friendships" WHERE "friendships"."friend_id" = $1[0m  [["friend_id", 6]]
+  ↳ app/controllers/pages_controller.rb:5
+  Rendering pages/feed.html.erb within layouts/application
+  Rendered posts/_form.html.erb (9.3ms)
+  [1m[36mPost Load (1.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE (user_id IN (6)) ORDER BY "posts"."created_at" DESC[0m
+  ↳ app/views/pages/feed.html.erb:6
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:1
+  [1m[36mLike Load (3.4ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."likeable_id" = $1 AND "likes"."likeable_type" = $2[0m  [["likeable_id", 13], ["likeable_type", "Post"]]
+  ↳ app/views/posts/_post.html.erb:15
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."likeable_id" = $1 AND "likes"."likeable_type" = $2[0m  [["likeable_id", 13], ["likeable_type", "Post"]]
+  ↳ app/views/posts/_post.html.erb:21
+  Rendered posts/_post.html.erb (28.6ms)
+  [1m[36mComment Load (1.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 13]]
+  ↳ app/views/pages/feed.html.erb:9
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:1
+  [1m[36mLike Load (0.5ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."likeable_id" = $1 AND "likes"."likeable_type" = $2[0m  [["likeable_id", 12], ["likeable_type", "Post"]]
+  ↳ app/views/posts/_post.html.erb:15
+  [1m[36mLike Load (0.4ms)[0m  [1m[34mSELECT  "likes".* FROM "likes" WHERE "likes"."likeable_id" = $1 AND "likes"."likeable_type" = $2 AND "likes"."user_id" = $3 ORDER BY "likes"."id" ASC LIMIT $4[0m  [["likeable_id", 12], ["likeable_type", "Post"], ["user_id", 6], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:16
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."likeable_id" = $1 AND "likes"."likeable_type" = $2[0m  [["likeable_id", 12], ["likeable_type", "Post"]]
+  ↳ app/views/posts/_post.html.erb:21
+  Rendered posts/_post.html.erb (25.5ms)
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 12]]
+  ↳ app/views/pages/feed.html.erb:9
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/pages/feed.html.erb:11
+  [1m[36mLike Load (1.0ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."likeable_id" = $1 AND "likes"."likeable_type" = $2[0m  [["likeable_id", 16], ["likeable_type", "Comment"]]
+  ↳ app/views/pages/feed.html.erb:13
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."likeable_id" = $1 AND "likes"."likeable_type" = $2[0m  [["likeable_id", 16], ["likeable_type", "Comment"]]
+  ↳ app/views/pages/feed.html.erb:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:1
+  [1m[36mLike Load (0.6ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."likeable_id" = $1 AND "likes"."likeable_type" = $2[0m  [["likeable_id", 7], ["likeable_type", "Post"]]
+  ↳ app/views/posts/_post.html.erb:15
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."likeable_id" = $1 AND "likes"."likeable_type" = $2[0m  [["likeable_id", 7], ["likeable_type", "Post"]]
+  ↳ app/views/posts/_post.html.erb:21
+  Rendered posts/_post.html.erb (10.1ms)
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 7]]
+  ↳ app/views/pages/feed.html.erb:9
+  Rendered pages/feed.html.erb within layouts/application (134.7ms)
+  Rendered layouts/_navbar.html.erb (0.6ms)
+Completed 200 OK in 567ms (Views: 444.0ms | ActiveRecord: 40.1ms)
+
+

@@ -8,7 +8,7 @@
 <span><%= post.user.name %></span>
  <div class="card post">
      <%= link_to post_path(post.id) do %>
-     <%= image_tag("https://i.picsum.photos/id/#{rand(1..800)}/400/450.jpg", class: "card-img-top") %>
+     <%= image_tag(post.image, class: "card-img-top") %>
      <% end %>
      <div class="card-body">
      <div class= "card-text"><%= post.content  %> </div>
