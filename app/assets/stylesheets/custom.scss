@@ -9,3 +9,18 @@
 .post {
     width: 500px;
 }
+
+a {
+  text-decoration: none !important;
+}
+
+.searchbox, .searchbtn {
+  background-color: #212529 !important;
+  border: none;
+  color: rgb(112, 112, 112) !important;
+}
+
+.form-control:focus {
+  border: none !important;
+  box-shadow: 0 0 0 0 !important;
+}
