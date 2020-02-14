@@ -10,7 +10,7 @@ feature 'create new comment' do
 
   scenario 'add comment' do
     @content2 = Faker::Lorem.sentence
-    comment_form = page.find('#comment_content').set(@content2)   
+    page.find('#comment_content').set(@content2)
     page.find('#new_comment').find('[value="submit"]').click
     expect(page).to have_content @content2
   end

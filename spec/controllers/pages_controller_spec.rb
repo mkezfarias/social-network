@@ -7,7 +7,7 @@ RSpec.describe PagesController, type: :controller do
         @user = FactoryBot.create(:user)
         @user2 = FactoryBot.create(:user)
         @friendship = @user.friendships.create(friend: @user2)
-        @friendship.confirmed = true
+        @friendship.update(confirmed: true)
         sign_in @user
         get :feed
       end
