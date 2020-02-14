@@ -1,0 +1,6 @@
+<p>All users</p>
+<% @users.each do |user| %>
+  <%= gravatar_for(user) %>
+  <%= link_to user.name, users_path(user) %>
+  <%= link_to "Send Frienship Request", friendships_path(user_id: user)%>
+<% end %>

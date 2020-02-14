@@ -1,0 +1,13 @@
+<h1>Hello,  <%= @user.name %></h1>
+<div class="card" style="width:300px">
+<div class="card-img"> <%= gravatar_for @user %>  </div>
+<div class="card-text">
+<%= @user.email %> <%= link_to "edit my profile", edit_user_registration_path %>
+</div>
+</div>
+
+
+
+<% @user.posts.each do |post| %>
+ <%=render 'posts/post', post: post %>
+ <% end %>

@@ -1,0 +1,48 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-dark">
+  <a class="navbar-brand text-white h1" href="/">n0mms</a>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto align-items-center p-2">
+      <li class="nav-item active pl-5 pr-3">
+        <a class="nav-link text-white" href="#"> > new memes </a>
+      </li>
+      <li class="nav-item active px-3">
+        <a class="nav-link text-white" href="#"> > my collection </a>
+      </li>
+      <li class="nav-item active px-3">
+    <form class="form-inline my-2 my-lg-0 d-inline d-flex flex-nowrap">
+      <input class="form-control mr-sm-2 searchbox d-inline " type="search" placeholder="Search" aria-label="Search">
+      <button class="d-inline btn btn-outline-light my-2 my-sm-0 bg-dark searchbtn" type="submit">go</button>
+    </form>
+     </li>
+    <% if current_user %>
+      <li class="nav-item dropdown px-3">
+        <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+         > mi perfil
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <%= link_to "ver", user_path(current_user.id), class: "dropdown-item"  %>
+          <a class="dropdown-item" href="#">editar</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">cerrar sesion</a>
+        </div>
+      </li>
+       
+      <li class="nav-item px-3 text-nowrap">
+       <%= link_to "> friend requests ( #{current_user.inverse_friendships.select{ |friendship| friendship.confirmed.nil? }.count if current_user} )", friends_path, class: "d-inline nav-link text-white" %> 
+      </li>
+      <li class="nav-item px-5 text-nowrap">
+      <%= link_to "> Log out", destroy_user_session_path, method: :delete, class: "nav-item text-light" %>
+      </li>
+    
+    <% end %>
+    
+    <li>
+    <%= link_to "Log in with Facebook", user_facebook_omniauth_authorize_path unless signed_in? %>
+    </li>
+
+</nav>
