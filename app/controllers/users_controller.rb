@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   skip_before_action :authenticate_user!, only: :new
   def index
-    friendships = current_user.friendships.where(user_id: current_user.id).map { |friend|friend.friend} + current_user.inverse_friendships.where(friend_id: current_user.id).map { |friend| friend.user} + [current_user]
+    friendships = current_user.friendships.where(user_id: current_user.id).map { |friend| friend.friend } + current_user.inverse_friendships.where(friend_id: current_user.id).map { |friend| friend.user } + [current_user]
     @users = User.all - friendships
   end
 
@@ -12,5 +12,4 @@ class UsersController < ApplicationController
   def new
     redirect_to new_user_session_path
   end
-
 end

@@ -1,20 +1,18 @@
 require 'rails_helper'
 
 RSpec.describe PagesController, type: :controller do
-
-  describe "GET #feed" do
+  describe 'GET #feed' do
     context 'when user logged in' do
       before(:each) do
         @user = FactoryBot.create(:user)
         @user2 = FactoryBot.create(:user)
         @friendship = @user.friendships.create(friend: @user2)
         @friendship.confirmed = true
-        @friendship.save
         sign_in @user
         get :feed
       end
 
-      it "returns http success" do
+      it 'returns http success' do
         expect(response).to have_http_status(:success)
       end
       it 'renders the :feed template' do
@@ -44,7 +42,5 @@ RSpec.describe PagesController, type: :controller do
         expect(response).to have_http_status(:found)
       end
     end
-    
   end
-
 end

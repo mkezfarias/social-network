@@ -4,8 +4,9 @@ RSpec.describe PostsController, type: :controller do
   describe 'GET #show' do
     context 'when user is logged in' do
       let(:user) { FactoryBot.create(:user) }
-      let(:post) { FactoryBot.create(:post, user: user)
-      }
+      let(:post) do
+        FactoryBot.create(:post, user: user)
+      end
       before(:each) do
         sign_in user
         get :show, params: { id: post.id }
@@ -24,7 +25,7 @@ RSpec.describe PostsController, type: :controller do
       before(:each) do
         sign_in user
         @post = FactoryBot.build(:post, user: user)
-        post :create, params: { post: @post.attributes  }
+        post :create, params: { post: @post.attributes }
       end
 
       it 'redirects to root path' do
@@ -32,9 +33,9 @@ RSpec.describe PostsController, type: :controller do
       end
 
       it 'creates a new post' do
-        expect{
-          post :create, params: { post: FactoryBot.attributes_for(:post, user: user)}
-        }.to change(Post, :count).by(1)
+        expect do
+          post :create, params: { post: FactoryBot.attributes_for(:post, user: user) }
+        end.to change(Post, :count).by(1)
       end
     end
   end

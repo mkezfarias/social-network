@@ -10,6 +10,9 @@ class PostsController < ApplicationController
     if post.save
       flash[:success] = 'good one 😂😂😂'
       redirect_to root_path
+    else
+      flash[:warning] = 'your post wasnt saved, sorry, please try again, it looks like it is a good one '
+      redirect_back
     end
   end
 

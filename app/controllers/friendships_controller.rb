@@ -1,5 +1,4 @@
 class FriendshipsController < ApplicationController
-
   def index
     @direct_friends = current_user.friendships.where(confirmed: true, user_id: current_user.id)
     @inverse_friends = current_user.inverse_friendships.where(confirmed: true, friend_id: current_user.id)
@@ -26,11 +25,8 @@ class FriendshipsController < ApplicationController
   end
 
   def destroy
-    #@friendship = Friendship.where("user_id = ? AND friend_id = ? OR friend_id = ? AND user_id = ?", params[:current_user], params[:friend], params[:friend], params[:current_user])
-   @friendship = Friendship.find_by(id: params[:id])
-   @friendship.destroy
-   redirect_to friends_path
+    @friendship = Friendship.find_by(id: params[:id])
+    @friendship.destroy
+    redirect_to friends_path
   end
-
-
 end

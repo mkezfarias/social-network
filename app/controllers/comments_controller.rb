@@ -1,14 +1,12 @@
 class CommentsController < ApplicationController
-
-  def new
-  end
+  def new; end
 
   def create
     post = Post.find_by(id: params[:post_id])
     comment = post.comments.new(comment_params)
     comment.user_id = current_user.id
     if comment.save
-      flash.now[:success] = "fantastic comment"
+      flash.now[:success] = 'fantastic comment'
       redirect_back(fallback_location: root_path)
     else
       redirect_back(fallback_location: root_path)

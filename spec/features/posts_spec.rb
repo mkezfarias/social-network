@@ -1,5 +1,4 @@
-require "rails_helper"
-
+require 'rails_helper'
 
 feature 'create new post' do
   before(:each) do

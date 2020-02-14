@@ -29,9 +29,9 @@ RSpec.describe FriendshipsController, type: :controller do
         sign_in user
       end
       it 'creates a new friendship' do
-        expect{
-          get :create, params: {user_id: friend}
-        }.to change(Friendship, :count).by(1)
+        expect do
+          get :create, params: { user_id: friend }
+        end.to change(Friendship, :count).by(1)
       end
       it 'redirects to user_path' do
         get :create, params: { user_id: friend }

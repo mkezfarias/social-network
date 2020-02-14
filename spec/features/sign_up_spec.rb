@@ -1,4 +1,4 @@
-require "rails_helper"
+require 'rails_helper'
 
 feature 'the sign up process' do
   scenario 'has new user page' do

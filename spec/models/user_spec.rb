@@ -9,13 +9,13 @@ RSpec.describe User, type: :model do
 
   describe 'error messages' do
     it 'gives an error message when email is not provided' do
-      user = FactoryBot.build(:user, email: "")
+      user = FactoryBot.build(:user, email: '')
       user.valid?
       expect(user.errors[:email]).to include('can\'t be blank')
     end
 
     it 'gives an error message when password is not provided' do
-      user = FactoryBot.build(:user, password: "")
+      user = FactoryBot.build(:user, password: '')
       user.valid?
       expect(user.errors[:password]).to include('can\'t be blank')
     end
