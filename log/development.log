@@ -46063,3 +46063,161 @@ Processing by PagesController#feed as HTML
 Completed 200 OK in 139ms (Views: 109.7ms | ActiveRecord: 18.7ms)
 
 
+Started DELETE "/users/sign_out" for ::1 at 2020-02-14 11:28:50 -0600
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"126LWxUG/cOVIFGcpwcDqkzBnw6eGr/oShRwvL+64iiZkkQCadzLZq6QLxNMZnARvnU+xNpHcngK0uIkwaJLXw=="}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ /home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 59ms (ActiveRecord: 8.7ms)
+
+
+Started GET "/" for ::1 at 2020-02-14 11:28:50 -0600
+Processing by PagesController#feed as HTML
+Completed 401 Unauthorized in 5ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-02-14 11:28:50 -0600
+Processing by Devise::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (2.4ms)
+  Rendered users/sessions/new.html.erb within layouts/application (14.4ms)
+  Rendered layouts/_navbar.html.erb (1.7ms)
+Completed 200 OK in 462ms (Views: 460.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-02-14 11:28:56 -0600
+Processing by Devise::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (1.3ms)
+  Rendered users/sessions/new.html.erb within layouts/application (5.0ms)
+  Rendered layouts/_navbar.html.erb (2.2ms)
+Completed 200 OK in 61ms (Views: 58.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-02-14 11:28:57 -0600
+Processing by Devise::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (1.2ms)
+  Rendered users/sessions/new.html.erb within layouts/application (5.7ms)
+  Rendered layouts/_navbar.html.erb (1.6ms)
+Completed 200 OK in 55ms (Views: 53.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/auth/facebook" for ::1 at 2020-02-14 11:28:59 -0600
+Started GET "/users/auth/facebook" for ::1 at 2020-02-14 11:28:59 -0600
+Started GET "/users/auth/facebook" for ::1 at 2020-02-14 11:32:12 -0600
+Started GET "/users/auth/facebook" for ::1 at 2020-02-14 11:32:12 -0600
+Started POST "/users/sign_in" for ::1 at 2020-02-14 11:34:55 -0600
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WMw+jKAb5zOV62aCQKHcNIbJFMWujs5CPOZsUgm3QGByFJOBQHA4YgmznjBbH+CxkhKuCQg4xFKdCtCPw1C3lg==", "user"=>{"email"=>"miguel@miguel.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "miguel@miguel.com"], ["LIMIT", 1]]
+  ↳ /home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Completed 401 Unauthorized in 33ms (ActiveRecord: 14.1ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WMw+jKAb5zOV62aCQKHcNIbJFMWujs5CPOZsUgm3QGByFJOBQHA4YgmznjBbH+CxkhKuCQg4xFKdCtCPw1C3lg==", "user"=>{"email"=>"miguel@miguel.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (28.8ms)
+  Rendered users/sessions/new.html.erb within layouts/application (37.8ms)
+  Rendered layouts/_navbar.html.erb (2.3ms)
+Completed 200 OK in 673ms (Views: 464.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-02-14 11:35:40 -0600
+Processing by Devise::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (1.1ms)
+  Rendered users/sessions/new.html.erb within layouts/application (5.2ms)
+  Rendered layouts/_navbar.html.erb (1.3ms)
+Completed 200 OK in 52ms (Views: 50.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/auth/facebook" for ::1 at 2020-02-14 11:35:41 -0600
+Started GET "/users/auth/facebook" for ::1 at 2020-02-14 11:35:42 -0600
+Started GET "/users/auth/facebook" for ::1 at 2020-02-14 11:40:18 -0600
+  [1m[35m (2.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Started GET "/users/auth/facebook" for ::1 at 2020-02-14 11:40:18 -0600
+Started GET "/users/auth/facebook/callback?code=AQCa_7-JA-RTQBgCFNbveCbtqOeWKYFf-v1eOQ_nBITrN-L0ePTpmdonqUKAD5HAbiaIOMkijZxhedtrhfEiU2ROP48qzAh1tVH5Rnsz5_6Fxbef4N1cRRoqWuyo8ET6br9PNKh_9koT9AFx1eb7_VmGE3nMf8nu2oItz0Btn6RGDvc72Mp0jnKS1p0Urlu3JfWls6QjxWsmdFylptakxSIqRduIe7mC7tY4T2jk0cURDltlLbfvxfivXuFE6hNbouXq_wzZhaoxoasRov-VZJ6Ao--yeqHoAT8gZonw-hxTUOk0-5mS7KKAD3gnNKZc-jg&state=4e50795bb4c2850e9d18d8e9b0d87041b6e6607bd719e82e" for ::1 at 2020-02-14 11:40:18 -0600
+Processing by Users::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQCa_7-JA-RTQBgCFNbveCbtqOeWKYFf-v1eOQ_nBITrN-L0ePTpmdonqUKAD5HAbiaIOMkijZxhedtrhfEiU2ROP48qzAh1tVH5Rnsz5_6Fxbef4N1cRRoqWuyo8ET6br9PNKh_9koT9AFx1eb7_VmGE3nMf8nu2oItz0Btn6RGDvc72Mp0jnKS1p0Urlu3JfWls6QjxWsmdFylptakxSIqRduIe7mC7tY4T2jk0cURDltlLbfvxfivXuFE6hNbouXq_wzZhaoxoasRov-VZJ6Ao--yeqHoAT8gZonw-hxTUOk0-5mS7KKAD3gnNKZc-jg", "state"=>"4e50795bb4c2850e9d18d8e9b0d87041b6e6607bd719e82e"}
+  [1m[36mUser Load (4.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."provider" = $1 AND "users"."uid" = $2 ORDER BY "users"."id" ASC LIMIT $3[0m  [["provider", "facebook"], ["uid", "10159284542964692"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:17
+Redirected to http://localhost:3000/
+Completed 302 Found in 63ms (ActiveRecord: 16.0ms)
+
+
+Started GET "/" for ::1 at 2020-02-14 11:40:18 -0600
+Processing by PagesController#feed as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ /home/mkezmkez/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mFriendship Load (0.9ms)[0m  [1m[34mSELECT "friendships".* FROM "friendships" WHERE "friendships"."user_id" = $1[0m  [["user_id", 6]]
+  ↳ app/controllers/pages_controller.rb:3
+  [1m[36mFriendship Load (1.0ms)[0m  [1m[34mSELECT "friendships".* FROM "friendships" WHERE "friendships"."friend_id" = $1[0m  [["friend_id", 6]]
+  ↳ app/controllers/pages_controller.rb:4
+  Rendering pages/feed.html.erb within layouts/application
+  Rendered posts/_form.html.erb (10.3ms)
+  [1m[36mPost Load (1.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE (user_id IN (6)) ORDER BY "posts"."created_at" DESC[0m
+  ↳ app/views/pages/feed.html.erb:6
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:1
+  [1m[36mLike Load (0.7ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."likeable_id" = $1 AND "likes"."likeable_type" = $2[0m  [["likeable_id", 13], ["likeable_type", "Post"]]
+  ↳ app/views/posts/_post.html.erb:15
+  [1m[36mLike Load (0.5ms)[0m  [1m[34mSELECT  "likes".* FROM "likes" WHERE "likes"."likeable_id" = $1 AND "likes"."likeable_type" = $2 AND "likes"."user_id" = $3 ORDER BY "likes"."id" ASC LIMIT $4[0m  [["likeable_id", 13], ["likeable_type", "Post"], ["user_id", 6], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:16
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."likeable_id" = $1 AND "likes"."likeable_type" = $2[0m  [["likeable_id", 13], ["likeable_type", "Post"]]
+  ↳ app/views/posts/_post.html.erb:21
+  Rendered posts/_post.html.erb (49.4ms)
+  [1m[36mComment Load (1.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 13]]
+  ↳ app/views/pages/feed.html.erb:9
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/pages/feed.html.erb:11
+  [1m[36mLike Load (1.0ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."likeable_id" = $1 AND "likes"."likeable_type" = $2[0m  [["likeable_id", 17], ["likeable_type", "Comment"]]
+  ↳ app/views/pages/feed.html.erb:13
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/pages/feed.html.erb:13
+  [1m[36mLike Load (2.7ms)[0m  [1m[34mSELECT  "likes".* FROM "likes" WHERE "likes"."likeable_id" = $1 AND "likes"."likeable_type" = $2 AND "likes"."user_id" = $3 ORDER BY "likes"."id" ASC LIMIT $4[0m  [["likeable_id", 17], ["likeable_type", "Comment"], ["user_id", 6], ["LIMIT", 1]]
+  ↳ app/views/pages/feed.html.erb:14
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."likeable_id" = $1 AND "likes"."likeable_type" = $2[0m  [["likeable_id", 17], ["likeable_type", "Comment"]]
+  ↳ app/views/pages/feed.html.erb:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:1
+  [1m[36mLike Load (1.0ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."likeable_id" = $1 AND "likes"."likeable_type" = $2[0m  [["likeable_id", 12], ["likeable_type", "Post"]]
+  ↳ app/views/posts/_post.html.erb:15
+  [1m[36mLike Load (2.8ms)[0m  [1m[34mSELECT  "likes".* FROM "likes" WHERE "likes"."likeable_id" = $1 AND "likes"."likeable_type" = $2 AND "likes"."user_id" = $3 ORDER BY "likes"."id" ASC LIMIT $4[0m  [["likeable_id", 12], ["likeable_type", "Post"], ["user_id", 6], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:16
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."likeable_id" = $1 AND "likes"."likeable_type" = $2[0m  [["likeable_id", 12], ["likeable_type", "Post"]]
+  ↳ app/views/posts/_post.html.erb:21
+  Rendered posts/_post.html.erb (13.6ms)
+  [1m[36mComment Load (0.7ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 12]]
+  ↳ app/views/pages/feed.html.erb:9
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/pages/feed.html.erb:11
+  [1m[36mLike Load (0.6ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."likeable_id" = $1 AND "likes"."likeable_type" = $2[0m  [["likeable_id", 16], ["likeable_type", "Comment"]]
+  ↳ app/views/pages/feed.html.erb:13
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."likeable_id" = $1 AND "likes"."likeable_type" = $2[0m  [["likeable_id", 16], ["likeable_type", "Comment"]]
+  ↳ app/views/pages/feed.html.erb:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:1
+  [1m[36mLike Load (1.5ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."likeable_id" = $1 AND "likes"."likeable_type" = $2[0m  [["likeable_id", 7], ["likeable_type", "Post"]]
+  ↳ app/views/posts/_post.html.erb:15
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."likeable_id" = $1 AND "likes"."likeable_type" = $2[0m  [["likeable_id", 7], ["likeable_type", "Post"]]
+  ↳ app/views/posts/_post.html.erb:21
+  Rendered posts/_post.html.erb (15.7ms)
+  [1m[36mComment Load (0.7ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 7]]
+  ↳ app/views/pages/feed.html.erb:9
+  Rendered pages/feed.html.erb within layouts/application (180.9ms)
+  Rendered layouts/_navbar.html.erb (1.4ms)
+Completed 200 OK in 649ms (Views: 503.2ms | ActiveRecord: 50.3ms)
+
+
