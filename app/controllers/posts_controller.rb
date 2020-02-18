@@ -11,8 +11,8 @@ class PostsController < ApplicationController
       flash[:success] = 'good one 😂😂😂'
       redirect_to root_path
     else
-      flash[:warning] = 'your post wasnt saved, sorry, please try again, it looks like it is a good one '
-      redirect_back
+      flash.now[:warning] = 'your post wasnt saved, sorry, please try again, it looks like it is a good one '
+      redirect_back(fallback_location: root_path)
     end
   end
 
@@ -26,4 +26,5 @@ class PostsController < ApplicationController
   def post_params
     params.require(:post).permit(:content, :image)
   end
+
 end

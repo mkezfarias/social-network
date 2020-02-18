@@ -9,6 +9,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find_by(id: params[:id])
+    @friendship = Friendship.find_by(user_id: @user.id) || Friendship.find_by(friend_id: @user.id)
   end
 
   def new

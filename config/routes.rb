@@ -4,7 +4,6 @@ Rails.application.routes.draw do
   get '/profile/:id', to: 'users#show', as: :user
   get '/friends', to: 'friendships#index'
   get '/friendships', to: 'friendships#create', as: :friendships
-  #devise_for :users
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
 
   devise_scope :user do
