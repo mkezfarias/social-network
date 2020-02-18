@@ -2,7 +2,7 @@ class FriendshipsController < ApplicationController
   def index
     @direct_friends = current_user.friendships.where(confirmed: true, user_id: current_user.id)
     @inverse_friends = current_user.inverse_friendships.where(confirmed: true, friend_id: current_user.id)
-    @sent = current_user.friendships.where(user_id: current_user.id)
+    @sent = current_user.friendships.where(user_id: current_user.id, confirmed: nil)
     @received = current_user.inverse_friendships.where(confirmed: nil, friend_id: current_user.id)
   end
 
@@ -21,6 +21,7 @@ class FriendshipsController < ApplicationController
   def update
     @friendship = Friendship.find_by(id: params[:id])
     @friendship.update(confirmed: true)
+    frd = Friendship.create(user_id: @friendship.friend_id, friend_id: @friendship.user_id, confirmed: true)
     redirect_to friends_path
   end
 
