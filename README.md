@@ -1,24 +1,113 @@
-# README
+ <br>
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+<br />
+<p align="center">
+  <a href="https://n0mss.herokuapp.com/">
+    <img src="https://github.com/mkezmkez/appleclone/raw/master/assets/microverse-logo.png" alt="Logo" width="80" height="80">
+  </a>
 
-Things you may want to cover:
+  <h3 align="center"> Social network </h3>
 
-* Ruby version
+  <p align="center">
 
-* System dependencies
+<br>
+  <a href="https://github.com/mkezmkez/social-network"><strong>Explore the docs »</strong></a>
+<br>
+<br> 
+  <a href="https://n0mss.herokuapp.com/">View Demo</a>
+<br> 
+--
+    <a href="https://github.com/mkezmkez/social-network/issues  ">Request Feature</a>
+  </p>
 
-* Configuration
 
-* Database creation
 
-* Database initialization
 
-* How to run the test suite
+<!-- TABLE OF CONTENTS -->
+## Table of Contents
 
-* Services (job queues, cache servers, search engines, etc.)
+* [About the Project](#about-the-project)
+* [Built With](#built-with)
+* [Getting Started](#getting-started)
+* [Contributing](#contributing)
+* [License](#license)
+* [Contact](#contact)
+* [Acknowledgements](#acknowledgements)
 
-* Deployment instructions
 
-* ...
+
+<!-- ABOUT THE PROJECT -->
+## About The Project
+
+What started as a school project, is now turning into something bigger. 
+<br>
+n0mms is a social platform to share memes and jokes launched to the spanish speaking market.
+<br>
+You can check the base architecture of the website in this repo, which includes:
+<br>
+- Users
+- Posts
+- Likes
+- Comments
+- Secure authentication with facebook and email
+- Friendships
+- Bootstrap
+<br>
+
+
+<br>
+For more details about the Project and it's requirements go to <a href="https://www.theodinproject.com/courses/ruby-on-rails/lessons/final-project"> The Odin Project</a>
+
+### Built With
+
+* RUBY
+* RAILS
+* BOOTSTRAP
+* POSTRESQL
+* RSPEC AND CAPYBARA FOR TESTING
+* OAUTH
+* DEVISE FOR AUTHENTICATION
+* FACEBOOK API
+
+<!-- GETTING STARTED -->
+## Getting Started
+
+To get a local copy up and running follow these simple steps.
+
+Clone or fork the repo <https://github.com/mkezmkez/social-network>
+
+
+<!-- CONTRIBUTING --> 
+## Contributing
+
+Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+
+
+<!-- LICENSE -->
+## License
+
+No licenses required as project was developed in educational eviroment.
+
+
+<!-- CONTACT -->
+## Contact
+
+Luis Puente - [@mkezmkez](https://twitter.com/mkezkmez)
+Carlos De Medeiros [@camfilho](https://twitter.com/camfilho)
+Project Link: [github.com/mkezmkez/ruby-enumerables](https://github.com/camfilho/micro-reddit)
+
+
+
+<!-- ACKNOWLEDGEMENTS -->
+## Acknowledgements
+
+* [CARLOS DE MEDEIROS](https://github.com/camfilho)
+* [LUIS PUENTE](https://github.com/mkezmkez)
+

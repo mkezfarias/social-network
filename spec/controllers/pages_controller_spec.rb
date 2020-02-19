@@ -18,12 +18,6 @@ RSpec.describe PagesController, type: :controller do
       it 'renders the :feed template' do
         expect(response).to render_template(:feed)
       end
-      it 'populates and array of friendships' do
-        expect(@friendship.confirmed).to eq(true)
-        expect(@friendship.user).to eq(@user)
-        expect(@friendship.friend).to eq(@user2)
-        expect(assigns(:friendships)).to include(@friendship)
-      end
       it 'populates an array of :posts' do
         posts = []
         5.times do
