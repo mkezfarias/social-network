@@ -2,7 +2,7 @@
 
 <br />
 <p align="center">
-  <a href="https://n0mss.herokuapp.com/">
+  <a href="https://n0mms.herokuapp.com/">
     <img src="https://github.com/mkezmkez/appleclone/raw/master/assets/microverse-logo.png" alt="Logo" width="80" height="80">
   </a>
 
@@ -14,7 +14,7 @@
   <a href="https://github.com/mkezmkez/social-network"><strong>Explore the docs »</strong></a>
 <br>
 <br> 
-  <a href="https://n0mss.herokuapp.com/">View Demo</a>
+  <a href="https://n0mms.herokuapp.com/">View Demo</a>
 <br> 
 --
     <a href="https://github.com/mkezmkez/social-network/issues  ">Request Feature</a>
