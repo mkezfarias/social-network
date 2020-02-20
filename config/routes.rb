@@ -5,11 +5,6 @@ Rails.application.routes.draw do
   get '/friends', to: 'friendships#index'
   get '/friendships', to: 'friendships#create', as: :friendships
   devise_for :users, controllers: { omniauth_callbacks: 'login/omniauth_callbacks' }
-  get 'auth/:provider/callback', to: 'sessions#create'
-  get 'auth/:login/callback', to: 'sessions#create'
-  get 'auth/login/callback', to: 'sessions#create'
-  get '/login/callback', to: 'sessions#create'
-  get 'auth/failure', to: redirect('/')
 
 
   devise_scope :user do
