@@ -39,11 +39,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-What started as a school project, is now turning into something bigger. 
-<br>
-n0mms is a social platform to share memes and jokes launched to the spanish speaking market.
-<br>
-You can check the base architecture of the website in this repo, which includes:
+What started as a school project, is now turning into something bigger. n0mms is a social platform to share memes and jokes tailored to the spanish speaking market. It's a work in progress, but you can check the core of the project in this repo, It includes the following functionalities
 <br>
 - Users
 - Posts
@@ -51,7 +47,6 @@ You can check the base architecture of the website in this repo, which includes:
 - Comments
 - Secure authentication with facebook and email
 - Friendships
-- Bootstrap
 <br>
 
 
