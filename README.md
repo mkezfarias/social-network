@@ -7,7 +7,7 @@
   </a>
 
   <a href="https://n0mms.herokuapp.com/">
-    <img src="https://github.com/mkezmkez/appleclone/raw/master/ashttps://raw.githubusercontent.com/mkezmkez/social-network/development/img.png" alt="Logo" width="500" height="380">
+    <img src="https://raw.githubusercontent.com/mkezmkez/social-network/development/img.png" alt="Screenshot" width="500" height="380">
   </a>
   
   <h3 align="center"> Social network </h3>
