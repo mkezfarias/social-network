@@ -14,9 +14,11 @@
   <a href="https://github.com/mkezmkez/social-network"><strong>Explore the docs »</strong></a>
 <br>
 <br> 
+<br> 
   <a href="https://n0mms.herokuapp.com/">View Demo</a>
-  
+  <br> 
   <a href="https://n0mms.herokuapp.com/">
+ <br> 
     <img src="https://raw.githubusercontent.com/mkezmkez/social-network/development/img.png" alt="Screenshot" width="500" height="380">
   </a>
 <br> 
