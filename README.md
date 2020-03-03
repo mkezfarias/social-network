@@ -5,10 +5,6 @@
   <a href="https://n0mms.herokuapp.com/">
     <img src="https://github.com/mkezmkez/appleclone/raw/master/assets/microverse-logo.png" alt="Logo" width="80" height="80">
   </a>
-
-  <a href="https://n0mms.herokuapp.com/">
-    <img src="https://raw.githubusercontent.com/mkezmkez/social-network/development/img.png" alt="Screenshot" width="500" height="380">
-  </a>
   
   <h3 align="center"> Social network </h3>
 
@@ -19,6 +15,10 @@
 <br>
 <br> 
   <a href="https://n0mms.herokuapp.com/">View Demo</a>
+  
+  <a href="https://n0mms.herokuapp.com/">
+    <img src="https://raw.githubusercontent.com/mkezmkez/social-network/development/img.png" alt="Screenshot" width="500" height="380">
+  </a>
 <br> 
 --
     <a href="https://github.com/mkezmkez/social-network/issues  ">Request Feature</a>
