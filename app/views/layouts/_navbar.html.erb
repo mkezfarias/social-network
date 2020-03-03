@@ -22,7 +22,7 @@
       </li>
       <li class="nav-item active px-3">
     <form class="form-inline my-2 my-lg-0 d-inline d-flex flex-nowrap">
-      <input class="form-control mr-sm-2 searchbox d-inline " type="search" placeholder="Search" aria-label="Search">
+      <input class="form-control mr-sm-2 searchbox d-inline" type="search" placeholder="Search" aria-label="Search">
       <button class="d-inline btn btn-outline-light my-2 my-sm-0 bg-dark searchbtn" type="submit">go</button>
     </form>
      </li>
@@ -49,7 +49,9 @@
       </li>
     
     <% end %>
-  
+  <li>
+    <%= link_to "Log in with Facebook", user_facebook_omniauth_authorize_path unless signed_in? %>
+    </li>
   </ul>
-  <div class="fb-login-button" data-width="" data-size="large" data-button-type="login_with" data-auto-logout-link="false" data-use-continue-as="false"></div>
+  
 </nav>
