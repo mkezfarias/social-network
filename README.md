@@ -39,33 +39,33 @@
 * [Contributing](#contributing)
 * [License](#license)
 * [Contact](#contact)
-* [Acknowledgements](#acknowledgements)
+* [Acknowledgments](#acknowledgments)
 
 
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-What started as a school project, is now turning into something bigger. n0mms is a social platform to share memes and jokes tailored to the spanish speaking market. It's a work in progress, but you can check the core of the project in this repo, It includes the following functionalities
+What started as a school project, is now turning into something bigger. n0mms is a social platform to share memes and jokes tailored to the Spanish speaking market. It's a work in progress, but you can check the core of the project in this repo, It includes the following functionalities
 <br>
 - Users
 - Posts
 - Likes
 - Comments
-- Secure authentication with facebook and email
+- Secure authentication with Facebook and email
 - Friendships
 <br>
 
 
 <br>
-For more details about the Project and it's requirements go to <a href="https://www.theodinproject.com/courses/ruby-on-rails/lessons/final-project"> The Odin Project</a>
+For more details about the project and its requirements go to <a href="https://www.theodinproject.com/courses/ruby-on-rails/lessons/final-project"> The Odin Project</a>
 
 ### Built With
 
 * RUBY
 * RAILS
 * BOOTSTRAP
-* POSTRESQL
+* POSTGRESQL
 * RSPEC AND CAPYBARA FOR TESTING
 * OAUTH
 * DEVISE FOR AUTHENTICATION
@@ -89,11 +89,11 @@ Run the tests with the following command
 ````
 $ bundle exec rspec
 ````
-Get it working in your localserver use this line in the terminal
+Get it working in your local server use this line in the terminal
 ````
 $ rails s
 ````
-It is recommended to deploy in Heroku, you'll need to open a heroku account in herokuapp.com
+It is recommended to deploy in Heroku, you'll need to open a Heroku account in herokuapp.com
 
 <!-- UPCOMING FEATURES -->
 ## Upcoming features
@@ -105,12 +105,12 @@ It is recommended to deploy in Heroku, you'll need to open a heroku account in h
 <!-- CONTRIBUTING --> 
 ## Contributing
 
-Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+Contributions are what makes the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
 1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
 <!-- LICENSE -->
@@ -125,7 +125,7 @@ Luis Puente - [@mkezmkez](https://twitter.com/mkezkmez)
 Carlos De Medeiros [@camfilho](https://twitter.com/camfilho)
 
 <!-- ACKNOWLEDGEMENTS -->
-## Acknowledgements
+## Acknowledgments
 
 * [CARLOS DE MEDEIROS](https://github.com/camfilho)
 * [LUIS PUENTE](https://github.com/mkezmkez)
