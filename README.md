@@ -75,8 +75,18 @@ For more details about the Project and it's requirements go to <a href="https://
 
 To get a local copy up and running follow these simple steps.
 
-Clone or fork the repo <https://github.com/mkezmkez/social-network>
-
+Clone the repo from the terminal in your projects folder
+````
+$ git clone git@github.com:mkezmkez/social-network.git
+````
+CD into the folder
+````
+$ cd social-network
+````
+To run it in your localserver use this line in the terminal
+````
+$ rails s
+````
 
 <!-- CONTRIBUTING --> 
 ## Contributing
