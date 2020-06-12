@@ -35,6 +35,7 @@
 * [About the Project](#about-the-project)
 * [Built With](#built-with)
 * [Getting Started](#getting-started)
+* [Upcomnig Features](#upcoming-features)
 * [Contributing](#contributing)
 * [License](#license)
 * [Contact](#contact)
@@ -87,6 +88,14 @@ To run it in your localserver use this line in the terminal
 ````
 $ rails s
 ````
+It is recommended to deploy in Heroku, you'll need to open a heroku account in herokuapp.com
+
+<!-- UPCOMING FEATURES -->
+## Upcoming features
+* Follow users feature
+* Recommendation algorithms for most popular memes
+* Multi-category for different types of memes
+
 
 <!-- CONTRIBUTING --> 
 ## Contributing
@@ -99,22 +108,16 @@ Contributions are what make the open source community such an amazing place to b
 4. Push to the Branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-
-
 <!-- LICENSE -->
 ## License
 
-No licenses required as project was developed in educational eviroment.
-
+Open License
 
 <!-- CONTACT -->
 ## Contact
 
 Luis Puente - [@mkezmkez](https://twitter.com/mkezkmez)
 Carlos De Medeiros [@camfilho](https://twitter.com/camfilho)
-Project Link: [github.com/mkezmkez/ruby-enumerables](https://github.com/camfilho/micro-reddit)
-
-
 
 <!-- ACKNOWLEDGEMENTS -->
 ## Acknowledgements
