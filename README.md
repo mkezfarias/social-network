@@ -80,11 +80,16 @@ Clone the repo from the terminal in your projects folder
 ````
 $ git clone git@github.com:mkezmkez/social-network.git
 ````
-CD into the folder
+CD into the folder and install the bundle
 ````
 $ cd social-network
+$ bundle install
 ````
-To run it in your localserver use this line in the terminal
+Run the tests with the following command
+````
+$ bundle exec rspec
+````
+Get it working in your localserver use this line in the terminal
 ````
 $ rails s
 ````
