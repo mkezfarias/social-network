@@ -3,7 +3,7 @@
 <br />
 <p align="center">
   <a href="https://n0mms.herokuapp.com/">
-    <img src="https://github.com/mkezmkez/appleclone/raw/master/assets/microverse-logo.png" alt="Logo" width="80" height="80">
+    
   </a>
   
   <h3 align="center"> Social Network - n0mms </h3>
