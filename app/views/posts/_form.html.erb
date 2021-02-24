@@ -1,0 +1,11 @@
+<%= form_for @post do |f| %>
+  <div class="form-group">
+     <%= f.label :content %>
+     <%= f.text_area :content, class: "form-text form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :image %>
+    <%= f.text_field :image, class: "form-control form-text" %>
+  </div>
+  <%= f.submit :submit, class: "btn btn-primary" %>
+<% end %>

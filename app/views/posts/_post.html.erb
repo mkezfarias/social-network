@@ -1,0 +1,23 @@
+<%= link_to user_path(post.user) do %>
+  <% if post.user.img_url %>
+    <%= image_tag(post.user.img_url) %>
+  <% else %>
+    <%= gravatar_for post.user %>
+  <% end %>
+<% end %>
+<span><%= post.user.name %></span>
+ <div class="card post">
+     <%= link_to post_path(post.id) do %>
+     <%= image_tag(post.image, class: "card-img-top") %>
+     <% end %>
+     <div class="card-body">
+     <div class= "card-text"><%= post.content  %> </div>
+     <% if post.likes.select { |like| like.user_id == current_user.id }.any? %>
+      <%= link_to 'Downvote', like_path(post.likes.where(user_id: current_user.id).first.id), method: :delete, class:"btn btn-danger post-downvote" %>
+    <% else %>
+      <%= link_to 'Upvote', likes_path(post_id: post.id), method: :post, class:"btn btn-primary post-upvote" %>
+    <% end %>
+    <blockquote class="blockquote mb-0">
+      <%= pluralize(post.likes.count, 'upvote') %> 
+    </blockquote>
+  </div>

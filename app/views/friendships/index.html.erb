@@ -1,0 +1,32 @@
+<p class="h3"> Pending requests </p>
+<div class="row">
+<% @sent.each do |friendship| %>
+<div class="card my-2 mt-5 col-lg-2 col-12 col-xl-3" style="width: 8rem;">
+  <div class= "d-flex justify-content-center"> <%= gravatar_for(friendship.friend) %></div>
+  <%= link_to friendship.friend.name, user_path(friendship.friend), class: "card-header d-flex justify-content-center" %> 
+  <%= link_to "cancel request", friendship_path(friendship), method: :delete, class: "btn btn-warning" %>
+  </div>
+<% end %>
+  </div>
+
+
+<p class="h3"> Received requests </p>
+<div class="row">
+<% @received.each do |friendship| %>
+<div class="card my-2 mt-5 col-lg-2 col-12 col-xl-3" style="width: 8rem;">
+ <div class= "d-flex justify-content-center">  <%= gravatar_for(friendship.user) %> </div>
+  <%= link_to friendship.user.name, user_path(friendship.user), class: "card-header d-flex justify-content-center" %>
+  <%= link_to "accept request", friendship_path(friendship), method: :put, class: "btn btn-primary" %>
+  <%= link_to "cancel request", friendship_path(friendship), method: :delete, class: "btn btn-warning" %>
+  </div>
+<% end %>
+  </div>
+
+<p class="h3"> All Friends </p>
+<div class="row">
+<% @direct_friends.each do |friendship| %>
+<div class="card my-2 mt-5 col-lg-2 col-12 col-xl-3" style="width: 8rem;">
+<div class= "d-flex justify-content-center"> <%= gravatar_for(friendship.friend) %> </div>
+  <%= link_to friendship.friend.name, user_path(friendship.friend), class: "card-header d-flex justify-content-center"  %>
+  <%= link_to "delete friend", friendship_path(friendship), method: :delete, class: "btn btn-warning" %>
+<% end %>

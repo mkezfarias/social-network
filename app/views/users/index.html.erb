@@ -1,0 +1,12 @@
+<h1 class="h4 mt-4"> Add some people </h1>
+<div class="row">
+
+<% @users.each do |user| %>
+<div class="card my-2 mt-5 col-lg-2 col-12 col-xl-3" style="width: 8rem;">
+  <div class= "d-flex justify-content-center"> <%= gravatar_for(user) %></div>
+  <%= link_to user.name, user_path(user), class: "card-header d-flex justify-content-center" %>
+  <%= link_to "Add to friends", friendships_path(user_id: user), class: "btn btn-primary" %>
+</div>
+<% end %>
+
+</div>

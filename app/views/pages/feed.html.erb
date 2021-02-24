@@ -1,0 +1,26 @@
+<%= render 'posts/form' %>
+
+<h1>Lo mas nuevo!</h1>
+<h1><%= current_user.name %></h1>
+
+<% @posts.each do |post| %>
+ <%=render 'posts/post', post: post %>
+
+  <% post.comments.each do |comment| %>
+  <div>
+    <%= comment.user.name %>
+    <%= comment.content %>
+    <% if comment.likes.select { |like| like.user == current_user }.any? %>
+      <%= link_to 'Downvote', like_path(comment.likes.where(user_id: current_user.id).first.id), method: :delete, class:"btn btn-danger downvote" %>
+    <% else %>
+      <%= link_to 'Upvote', likes_path(comment_id: comment.id), method: :post, class:"btn btn-primary upvote" %>
+    <% end %>
+    <span> <%= pluralize(comment.likes.count, 'like') %></p>
+    <%= "#{time_ago_in_words(comment.created_at)} ago" %>
+    <% end %>
+  </div>
+  <%= form_for [post, post.comments.new] do |f| %>
+    <%= f.text_field :content, placeholder: "add comment" %>
+    <%= f.submit :submit %>
+  <% end %>
+<% end %>

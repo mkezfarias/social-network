@@ -1,0 +1,15 @@
+<h1> <%= @user.name %>'s Profile </h1>
+<div class="card" style="width:300px">
+<div class="card-img"> <%= gravatar_for @user %>  </div>
+<div class="card-text">
+<%= @user.email %> <%= link_to "edit my profile", edit_user_registration_path if @user == current_user%>
+<% unless Friendship.find_by(user_id: @user.id) || Friendship.find_by(friend_id: @user.id) %>
+<%= link_to "Add to friends", friendships_path(user_id: @user.id), class: "btn btn-primary" %>
+<% end %>
+
+</div>
+</div>
+
+ <% @user.posts.each do |post| %>
+   <%=render 'posts/post', post: post %>
+ <% end %>
