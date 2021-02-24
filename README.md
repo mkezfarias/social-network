@@ -3,7 +3,7 @@
   </a>
   <h3 align="center"> Social Network - n0mms </h3>
 
-
+<p align="center">
 
 <br>
   <a href="https://github.com/mkezmkez/social-network"><strong>Explore the docs »</strong></a>
