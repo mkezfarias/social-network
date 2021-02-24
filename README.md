@@ -1,14 +1,9 @@
- <br>
-
-<br />
 <p align="center">
-  <a href="https://n0mms.herokuapp.com/">
-    
+  <a href="https://n0mms.herokuapp.com/">  
   </a>
-  
   <h3 align="center"> Social Network - n0mms </h3>
 
-  <p align="center">
+
 
 <br>
   <a href="https://github.com/mkezmkez/social-network"><strong>Explore the docs »</strong></a>
